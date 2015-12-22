@@ -1,0 +1,86 @@
+/*
+ * 2015-12-19
+ * the home page style documetn 
+*/
+
+// ----------------import sass file----------------
+
+@import "./base.scss";
+@import "./TopNavbar.scss";
+@import "./LeftNavbar.scss";
+
+/*-------------content----------------*/
+.yue-main-content {
+	position: relative;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	word-wrap: nowrap;
+}
+.yue-content {
+	width: 100%;
+	@include Padding(15px, 35px, null, 35px);
+	text-align: center;
+	z-index: 8;
+}
+@media only screen and (min-width: 750px) {
+	.yue-main-content {
+ 		@include Margin(null, null, null, 210px);
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-width: 480px) {
+	.yue-main-content {
+ 		@include Margin(null, null, null, 80px);
+	}
+}
+.yue-content-post {
+	max-width: 550px;
+	@include Padding(null, 15px, null, 15px);
+	margin-bottom: 20px;
+	background-color: $white;
+	overflow: hidden;
+	@include BoxShadow(0px, 3px, 3px, #ccc);
+
+	.user-info {
+		@include Padding(13px, null, 13px, null);
+		text-align: left;
+
+		.user-logo {
+			width: 36px;
+			height: 36px;
+			line-height: 36px;
+			display: inline-block;
+			text-align: center;
+			border-radius: 36px;
+			font-size: 24px;
+			color: cornflowerblue;
+			border: 1px solid #333;
+		}
+		.user-name {
+			display: inline-block;
+			font-size: 20px;
+			color: #222;
+			font-weight: 600;
+			margin-left: 10px;
+		}
+	}
+	.article-title {
+		@include Padding(10px, null, 18px, null);
+		text-align: left;
+		word-wrap: break-word;
+		// border-bottom: 1px solid #ccc;
+
+		a {
+			font-size: 20px;
+			white-space: break-word;
+			&:hover {
+				color: #333;
+			}
+		}
+	}
+	.img {
+		@include Margin(null, -15px, null, -15px);
+	}
+}

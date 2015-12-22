@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* 
+ * leftsidebar 左侧边栏
+ */
+.yue-left-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  z-index: 2; }
+
+@media only screen and (min-width: 750px) {
+  .yue-left-fixed {
+    display: block;
+    width: 210px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .yue-left-fixed {
+    display: block;
+    width: 210px; } }
+.yue-left-navbar {
+  width: 100%;
+  height: 100%;
+  margin-top: 64px; }
+  .yue-left-navbar a {
+    width: 100%;
+    display: block;
+    padding-left: 10px;
+    line-height: 48px;
+    color: #333;
+    text-indent: 30px; }
+    .yue-left-navbar a:visited, .yue-left-navbar a:hover {
+      background-color: #E8E8E8; }
+    .yue-left-navbar a .icon-font {
+      display: inline-block;
+      font-size: 18px;
+      margin-left: -41px; }
+    .yue-left-navbar a .item-content {
+      margin-left: 10px; }
+  .yue-left-navbar .active {
+    color: cornflowerblue;
+    background-color: #E8E8E8; }
+
+.yue-nav-item {
+  padding-top: 16px; }
+
+/*# sourceMappingURL=LeftNavbar.css.map */

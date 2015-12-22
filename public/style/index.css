@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/*
+ * 2015-12-19
+ * the home page style documetn 
+*/
+/* 
+ * base style
+ */
+/* 
+ * 2015-12-21
+ * Variables
+ */
+/* Font size */
+/* heading font size */
+/* backgroundcolor */
+/* font color */
+/* link font color */
+body {
+  background-color: #EEE; }
+
+@media only screen and (min-width: 750px) {
+  html, body {
+    font-size: 16px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width) {
+  html, body {
+    font-size: 14px; } }
+a {
+  text-decoration: none;
+  color: #333; }
+
+a:hover {
+  text-decoration: none; }
+
+/* 
+ * 顶部栏样式
+ */
+/* 
+ * header
+ */
+.header {
+  position: relative;
+  height: 68px;
+  padding: 10px 8px;
+  background-color: cornflowerblue;
+  z-index: 9; }
+  .header div {
+    height: 48px; }
+  .header .title {
+    display: table; }
+
+.yue-top-bar {
+  margin-left: 0;
+  margin-right: 0; }
+
+.wrap-icon {
+  position: absolute;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-left: -10px;
+  cursor: pointer; }
+
+.yue-left-icon {
+  width: 48px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+  .yue-left-icon svg {
+    vertical-align: middle; }
+    .yue-left-icon svg path {
+      fill: #FFF; }
+
+.yue-top-search {
+  line-height: 48px;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box; }
+
+.yue-logo-font {
+  position: absolute;
+  display: inline-block;
+  margin-left: 48px; }
+  .yue-logo-font a {
+    color: #FFF;
+    font-size: 2em; }
+
+.yue-input-search {
+  width: 80%;
+  margin-left: 28%;
+  padding-left: 10px;
+  background-color: #83a4e0; }
+
+@media (max-width: 750px) {
+  .yue-input-search {
+    width: 35%;
+    margin-left: 35%; } }
+.yue-form-control span {
+  color: #FFF; }
+
+.yue-form-control input::-moz-placeholder {
+  color: #FFF; }
+
+.yue-form-control input::-webkit-input-placeholder {
+  color: #FFF; }
+
+.yue-form-control input:-ms-input-placeholder {
+  color: #FFF; }
+
+.yue-form-control input {
+  width: 100%;
+  margin-left: 5px;
+  padding: 2px 5px;
+  font-size: 16px;
+  color: #FFF;
+  border: none;
+  /* 隐藏input　获得光标时显示的边框*/
+  outline: medium;
+  background-color: transparent; }
+
+.login {
+  padding-left: 0px;
+  padding-right: 0px;
+  white-space: nowrap; }
+  .login a {
+    line-height: 48px;
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block; }
+    .login a:hover {
+      color: #FFF; }
+
+/* 
+ * leftsidebar 左侧边栏
+ */
+.yue-left-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: none;
+  height: 100%;
+  z-index: 2; }
+
+@media only screen and (min-width: 750px) {
+  .yue-left-fixed {
+    display: block;
+    width: 210px; } }
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .yue-left-fixed {
+    display: block;
+    width: 210px; } }
+.yue-left-navbar {
+  width: 100%;
+  height: 100%;
+  margin-top: 64px; }
+  .yue-left-navbar a {
+    width: 100%;
+    display: block;
+    padding-left: 10px;
+    line-height: 48px;
+    color: #333;
+    text-indent: 30px; }
+    .yue-left-navbar a:visited, .yue-left-navbar a:hover {
+      background-color: #E8E8E8; }
+    .yue-left-navbar a .icon-font {
+      display: inline-block;
+      font-size: 18px;
+      margin-left: -41px; }
+    .yue-left-navbar a .item-content {
+      margin-left: 10px; }
+  .yue-left-navbar .active {
+    color: cornflowerblue;
+    background-color: #E8E8E8; }
+
+.yue-nav-item {
+  padding-top: 16px; }
+
+/*-------------content----------------*/
+.yue-main-content {
+  position: relative;
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  word-wrap: nowrap; }
+
+.yue-content {
+  width: 100%;
+  padding-top: 15px;
+  padding-right: 35px;
+  padding-left: 35px;
+  text-align: center;
+  z-index: 8; }
+
+@media only screen and (min-width: 750px) {
+  .yue-main-content {
+    margin-left: 210px; } }
+@media only screen and (min-device-width: 320px) and (max-width: 480px) {
+  .yue-main-content {
+    margin-left: 80px; } }
+.yue-content-post {
+  max-width: 550px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  background-color: #FFF;
+  overflow: hidden;
+  box-shadow: 0px 3px 3px #ccc; }
+  .yue-content-post .user-info {
+    padding-top: 13px;
+    padding-bottom: 13px;
+    text-align: left; }
+    .yue-content-post .user-info .user-logo {
+      width: 36px;
+      height: 36px;
+      line-height: 36px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 36px;
+      font-size: 24px;
+      color: cornflowerblue;
+      border: 1px solid #333; }
+    .yue-content-post .user-info .user-name {
+      display: inline-block;
+      font-size: 20px;
+      color: #222;
+      font-weight: 600;
+      margin-left: 10px; }
+  .yue-content-post .article-title {
+    padding-top: 10px;
+    padding-bottom: 18px;
+    text-align: left;
+    word-wrap: break-word; }
+    .yue-content-post .article-title a {
+      font-size: 20px;
+      white-space: break-word; }
+      .yue-content-post .article-title a:hover {
+        color: #333; }
+  .yue-content-post .img {
+    margin-right: -15px;
+    margin-left: -15px; }
+
+/*# sourceMappingURL=index.css.map */

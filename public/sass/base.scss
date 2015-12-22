@@ -1,0 +1,22 @@
+/* 
+ * base style
+ */
+@import "./variable.scss";
+@import "./mixin.scss";
+
+body { background-color: $body-bg-color; }
+@media only screen and (min-width: 750px) {
+	html, body {
+		font-size:  $font-size-base;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width) {
+	html, body {
+	font-size:  $font-size-small;
+	}
+}
+a {
+	text-decoration: none;
+	color: $link-normal-color;
+}
+a:hover { text-decoration: none; }
