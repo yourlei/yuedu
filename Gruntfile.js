@@ -12,12 +12,14 @@ module.exports = function (grunt) {
 		watch: {
 			jade: {
 			  files: ['app/views/**'],
+			  tasks: ['jade'],
 			  options: {
 			    livereload: true
 			  }
 			},
 		  js: {
-		    files: ['public/js/**'],
+		    files: ['app/**/*.js','public/js/*.js'],
+		    // allWithDefaultOptions: ['app/**/*.js', 'public/js/*.js']
 		    tasks: ['jshint'],
 		    options: {
 		      livereload: true
@@ -39,13 +41,26 @@ module.exports = function (grunt) {
 		  }
 
 		},
-
+		// jade: {
+		//   compile: {
+		//     options: {
+		//       data: {}
+		//     },
+		//     files: [{
+		//       expand: true,
+		//       cwd: 'source',
+		//       src: [ 'app/**/*.jade' ],
+		//       dest: 'build',
+		//       ext: '.html'
+		//     }]
+		//   }
+		// },
 		jshint: {
+			all: ['public/js/*.js', 'test/**/*.js', 'app/**/*.js'],
 		  options: {
-		    jshintrc: '.jshintrc',
+		    // jshintrc: '.jshintrc',
 		    ignores: ['public/libs/**/*.js']
-		  },
-		  all: ['public/js/*.js', 'test/**/*.js', 'app/**/*.js']
+		  }
 		},
 
 		// less: {

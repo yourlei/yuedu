@@ -2,56 +2,125 @@ extend ../layout
 block content
 	include ../includes/topNavbar
 	include ../includes/leftNavbar
-	.row
-		.yue-main-content
-			.yue-content
-				.col-md-6
-					.yue-content-post
-						.user-info
-							a(href="#")
-								span.glyphicon.glyphicon-user.user-logo
-								span.user-name	Leiyu
-						.article-title
-							a(href="") Are your ready?
-						img(src="/images/post-img-3.webp")
-					.yue-content-post
-						.user-info
-							a(href="#")
-								span.glyphicon.glyphicon-user.user-logo
-								span.user-name	Leiyu
-						.article-title
-							a(href="") Are your ready?
-						img.img(src="/images/post-img-2.png")
-					.yue-content-post
-						.user-info
-							a(href="#")
-								span.glyphicon.glyphicon-user.user-logo
-								span.user-name	Leiyu
-						.article-title
-							a(href="") Are your ready?
-						img(src="/images/post-img-3.webp")
-				.col-md-6
-					.yue-content-post
-						.user-info
-							a(href="#")
-								span.glyphicon.glyphicon-user.user-logo
-								span.user-name	Leiyu
-						.article-title
-							a(href="") Are your ready?Are your ready?Are your ready?Are your ready?Are your ready?
-						img.img(src="/images/post-img-3.webp")
-					.yue-content-post
-						.user-info
-							a(href="#")
-								span.glyphicon.glyphicon-user.user-logo
-								span.user-name	Leiyu
-						.article-title
-							a(href="") Are your ready?
-						img(src="/images/post-img-3.webp")
-					.yue-content-post
-						.user-info
-							a(href="#")
-								span.glyphicon.glyphicon-user.user-logo
-								span.user-name	Leiyu
-						.article-title
-							a(href="") Are your ready?
-						img(src="/images/post-img-3.webp")
+	.container#main
+		.row
+			.yue-main-content
+				.yue-content
+					.col-md-6
+						.yue-content-post
+							.user-info
+								a(href="#")
+									span.glyphicon.glyphicon-user.user-logo
+									span.user-name Leiyu
+								span.post-time 9小时前
+							.article-title
+								a(href="") 为什么越想学习，越抽不出时间来学习？
+							a.img(href="")
+								img(src="/images/post-img-1.jpg")
+							.post-footer
+								a(href="") 
+									span 阅读
+									span (229)
+								a(href="") 
+									span 评论
+									span (99)
+								a(href="") 
+									span 分享
+								a(href="") 
+									//span 喜欢
+									span.glyphicon.glyphicon-heart.icon-heart
+						.yue-content-post
+							.user-info
+								a(href="#")
+									span.glyphicon.glyphicon-user.user-logo
+									span.user-name Leiyu
+								span.post-time 9小时前
+							.article-title
+								a(href="") 10本文艺美学书教你更有质感的生活
+							a.img(href="")
+								img(src="/images/post-img-4.webp")
+							.post-footer
+								a(href="") 
+									span 阅读
+									span (229)
+								a(href="") 
+									span 评论
+									span (99)
+								a(href="") 
+									span 分享
+								a(href="") 
+									//span 喜欢
+									span.glyphicon.glyphicon-heart.icon-heart
+						.yue-content-post
+							.user-info
+								a(href="#")
+									span.glyphicon.glyphicon-user.user-logo
+									span.user-name Leiyu
+								span.post-time 9小时前
+							.article-title
+								a(href="") 有了这10款逆天级效率工具，每天提前下班2小时!#DEMO8年度产品盘点#
+							a.img(href="")
+								img(src="/images/post-img-3.webp")
+							.post-footer
+								a(href="") 
+									span 阅读
+									span (229)
+								a(href="") 
+									span 评论
+									span (99)
+								a(href="") 
+									span 分享
+								a(href="") 
+									//span 喜欢
+									span.glyphicon.glyphicon-heart.icon-heart
+					.col-md-6
+						.yue-content-post
+							.user-info
+								a(href="#")
+									span.glyphicon.glyphicon-user.user-logo
+									span.user-name Leiyu
+								span.post-time 9小时前
+							.article-title
+								a(href="") Are your ready?Are your ready?Are your ready?Are your ready?Are your ready?
+							a.img(href="")
+								img(src="/images/post-img-2.png")
+							.post-footer
+								a(href="") 
+									span 阅读
+									span (229)
+								a(href="") 
+									span 评论
+									span (99)
+								a(href="") 
+									span 分享
+								a(href="") 
+									//span 喜欢
+									span.glyphicon.glyphicon-heart.icon-heart
+						.yue-content-post
+							.user-info
+								a(href="#")
+									span.glyphicon.glyphicon-user.user-logo
+									span.user-name Leiyu
+								span.post-time 9小时前
+							.article-title
+								a(href="") Are your ready?
+							a.img(href="")
+								img(src="/images/post-img-5.webp")
+							.post-footer
+								a(href="") 
+									span 阅读
+									span (229)
+								a(href="") 
+									span 评论
+									span (99)
+								a(href="") 
+									span 分享
+								a(href="") 
+									//span 喜欢
+									span.glyphicon.glyphicon-heart.icon-heart
+			.fixed-icon-pen
+				span.glyphicon.glyphicon-pencil.icon-pen
+
+	// <--! javascript -->
+	script(src = '/libs/jquery/dist/jquery.min.js')
+	script(src = '/js/leftNavbar.js')

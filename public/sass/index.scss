@@ -17,11 +17,11 @@
 	display: -ms-flexbox;      /* TWEENER - IE 10 */
 	display: -webkit-flex;     /* NEW - Chrome */
 	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-	word-wrap: nowrap;
+	white-space: nowrap;
 }
 .yue-content {
 	width: 100%;
-	@include Padding(15px, 35px, null, 35px);
+	@include Padding(15px, null, null, null);
 	text-align: center;
 	z-index: 8;
 }
@@ -30,22 +30,33 @@
  		@include Margin(null, null, null, 210px);
 	}
 }
+@media only screen and (max-width: 750px) {
+	.yue-main-content {
+ 		margin: 0 auto !important;
+	}
+}
 @media only screen and (min-device-width: 320px) and (max-width: 480px) {
 	.yue-main-content {
  		@include Margin(null, null, null, 80px);
 	}
 }
+// post article
 .yue-content-post {
-	max-width: 550px;
+	max-width: 530px;
+	min-width: 280px;
 	@include Padding(null, 15px, null, 15px);
-	margin-bottom: 20px;
+	margin: 0 auto 15px;
 	background-color: $white;
 	overflow: hidden;
 	@include BoxShadow(0px, 3px, 3px, #ccc);
+	white-space: normal;
 
 	.user-info {
-		@include Padding(13px, null, 13px, null);
+		position: relative;
+		line-height: 36px;
 		text-align: left;
+		vertical-align: middle;
+		@include Padding(13px, null, 13px, null);
 
 		.user-logo {
 			width: 36px;
@@ -60,17 +71,24 @@
 		}
 		.user-name {
 			display: inline-block;
-			font-size: 20px;
 			color: #222;
-			font-weight: 600;
 			margin-left: 10px;
 		}
+		.post-time {
+			position: absolute;
+			right: 0;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 12px;
+			font-weight: normal;
+
+		}
 	}
+	// article title
 	.article-title {
 		@include Padding(10px, null, 18px, null);
 		text-align: left;
 		word-wrap: break-word;
-		// border-bottom: 1px solid #ccc;
 
 		a {
 			font-size: 20px;
@@ -81,6 +99,46 @@
 		}
 	}
 	.img {
+		display: inline-block;
 		@include Margin(null, -15px, null, -15px);
+	}
+	// post footer --click, comment, love
+	.post-footer {
+		text-align: right;
+		@include Margin(15px, null, 15px, null);
+
+		a {
+			display: inline-block;
+			font-size: $font-size-smaller;
+			text-align: center;
+			vertical-align: middle;
+			@include Margin(null, 8px, null, 5px);
+		}
+		.icon-heart {
+				display: inline-block;
+				font-size: $font-size-small;
+			}
+	}
+}
+// pencile 写文章图标
+.fixed-icon-pen {
+	position: fixed;
+	bottom: 50px;
+	right: 20px;
+	width: 56px;
+	height: 56px;
+	line-height: 56px;
+	border-radius: 56px;
+	text-align: center;
+	z-index: 10;
+	background-color: $cornflowerblue;
+	@include BoxShadow(2px, 2px, 5px, #333);
+
+	.icon-pen {
+		display: inline-block;
+		line-height: 56px;
+		font-size: 24px;
+		text-align: center;
+		color: $white;
 	}
 }

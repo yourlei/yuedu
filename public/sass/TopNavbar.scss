@@ -7,6 +7,11 @@ $top-navbar-vertical-padding:   10px;
 $top-navbar-horizental-padding: 8px;
 $top-navbar-div-height: 			  $top-navbar-heigth - 2*$top-navbar-vertical-padding;
 
+/* Font size */
+$font-size-base:    16px;
+$font-size-small:   $font-size-base - 2px;
+$font-size-smaller: $font-size-base - 4px;
+$font-size-large:   $font-size-base + 2px;
 // line height
 $top-navbar-lineHeight: 48px;
 
@@ -17,7 +22,7 @@ $top-navbar-lineHeight: 48px;
  	position: relative;
  	height: $top-navbar-heigth;
  	padding: $top-navbar-vertical-padding $top-navbar-horizental-padding;
- 	background-color: $top-navbar-bg-color;
+ 	background-color: cornflowerblue;
  	z-index: 9;
 
  	div { height: $top-navbar-div-height; }
@@ -45,7 +50,7 @@ $top-navbar-lineHeight: 48px;
 	svg {
 		vertical-align: middle;
 
-		path { fill: $white; }
+		path { fill: #FFF; }
 	}
 }
 
@@ -62,7 +67,7 @@ $top-navbar-lineHeight: 48px;
 	margin-left: 48px;
 
 	a { 
-		color: $white;
+		color: #FFF;
 		font-size: 2em; 
 	}
 }
@@ -79,7 +84,7 @@ $top-navbar-lineHeight: 48px;
 	}
 }
 .yue-form-control span {
-	color: $white;
+	color: #FFF;
 }
 // 搜索框中占位符字体颜色
 .yue-form-control input::-moz-placeholder { color: #FFF; }
@@ -90,7 +95,7 @@ $top-navbar-lineHeight: 48px;
 	margin-left: 5px;
 	padding: 2px 5px;
 	font-size: $font-size-base;
-	color: $white;
+	color: #FFF;
 	border: none;
 	/* 隐藏input　获得光标时显示的边框*/
 	outline:medium;
@@ -108,7 +113,7 @@ $top-navbar-lineHeight: 48px;
 		display: inline-block;
 
 		&:hover {
-			color: $white;
+			color: #FFF;
 		}
 	}
 }

@@ -34,6 +34,7 @@ a:hover {
 /* 
  * 顶部栏样式
  */
+/* Font size */
 /* 
  * header
  */
@@ -189,34 +190,40 @@ a:hover {
   /* NEW - Chrome */
   display: flex;
   /* NEW, Spec - Opera 12.1, Firefox 20+ */
-  word-wrap: nowrap; }
+  white-space: nowrap; }
 
 .yue-content {
   width: 100%;
   padding-top: 15px;
-  padding-right: 35px;
-  padding-left: 35px;
   text-align: center;
   z-index: 8; }
 
 @media only screen and (min-width: 750px) {
   .yue-main-content {
     margin-left: 210px; } }
+@media only screen and (max-width: 750px) {
+  .yue-main-content {
+    margin: 0 auto !important; } }
 @media only screen and (min-device-width: 320px) and (max-width: 480px) {
   .yue-main-content {
     margin-left: 80px; } }
 .yue-content-post {
-  max-width: 550px;
+  max-width: 530px;
+  min-width: 280px;
   padding-right: 15px;
   padding-left: 15px;
-  margin-bottom: 20px;
+  margin: 0 auto 15px;
   background-color: #FFF;
   overflow: hidden;
-  box-shadow: 0px 3px 3px #ccc; }
+  box-shadow: 0px 3px 3px #ccc;
+  white-space: normal; }
   .yue-content-post .user-info {
+    position: relative;
+    line-height: 36px;
+    text-align: left;
+    vertical-align: middle;
     padding-top: 13px;
-    padding-bottom: 13px;
-    text-align: left; }
+    padding-bottom: 13px; }
     .yue-content-post .user-info .user-logo {
       width: 36px;
       height: 36px;
@@ -229,10 +236,15 @@ a:hover {
       border: 1px solid #333; }
     .yue-content-post .user-info .user-name {
       display: inline-block;
-      font-size: 20px;
       color: #222;
-      font-weight: 600;
       margin-left: 10px; }
+    .yue-content-post .user-info .post-time {
+      position: absolute;
+      right: 0;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 12px;
+      font-weight: normal; }
   .yue-content-post .article-title {
     padding-top: 10px;
     padding-bottom: 18px;
@@ -244,7 +256,41 @@ a:hover {
       .yue-content-post .article-title a:hover {
         color: #333; }
   .yue-content-post .img {
+    display: inline-block;
     margin-right: -15px;
     margin-left: -15px; }
+  .yue-content-post .post-footer {
+    text-align: right;
+    margin-top: 15px;
+    margin-bottom: 15px; }
+    .yue-content-post .post-footer a {
+      display: inline-block;
+      font-size: 12px;
+      text-align: center;
+      vertical-align: middle;
+      margin-right: 8px;
+      margin-left: 5px; }
+    .yue-content-post .post-footer .icon-heart {
+      display: inline-block;
+      font-size: 14px; }
+
+.fixed-icon-pen {
+  position: fixed;
+  bottom: 50px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 56px;
+  text-align: center;
+  z-index: 10;
+  background-color: cornflowerblue;
+  box-shadow: 2px 2px 5px #333; }
+  .fixed-icon-pen .icon-pen {
+    display: inline-block;
+    line-height: 56px;
+    font-size: 24px;
+    text-align: center;
+    color: #FFF; }
 
 /*# sourceMappingURL=index.css.map */

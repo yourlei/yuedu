@@ -1,65 +1,102 @@
-/*
-Error: Undefined variable: "$top-navbar-bg-color".
-        on line 20 of public/sass/TopNavbar.scss
+@charset "UTF-8";
+/* 
+ * 顶部栏样式
+ */
+/* Font size */
+/* 
+ * header
+ */
+.header {
+  position: relative;
+  height: 68px;
+  padding: 10px 8px;
+  background-color: cornflowerblue;
+  z-index: 9; }
+  .header div {
+    height: 48px; }
+  .header .title {
+    display: table; }
 
-15:  *\/
-16:  .header {
-17:  	position: relative;
-18:  	height: $top-navbar-heigth;
-19:  	padding: $top-navbar-vertical-padding $top-navbar-horizental-padding;
-20:  	background-color: $top-navbar-bg-color;
-21:  	z-index: 9;
-22: 
-23:  	div { height: $top-navbar-div-height; }
-24: 
-25:  	.title { display: table; }
+.yue-top-bar {
+  margin-left: 0;
+  margin-right: 0; }
 
-Backtrace:
-public/sass/TopNavbar.scss:20
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/script/tree/variable.rb:49:in `_perform'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/script/tree/node.rb:50:in `perform'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:395:in `visit_prop'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block (2 levels) in visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:431:in `block in visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:429:in `visit_rule'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/stack.rb:79:in `block in with_base'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/stack.rb:115:in `with_frame'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/stack.rb:79:in `with_base'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:158:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `map'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/base.rb:36:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:157:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/perform.rb:8:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/root_node.rb:36:in `css_tree'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:412:in `run'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Undefined variable: \"$top-navbar-bg-color\".\A         on line 20 of public/sass/TopNavbar.scss\A \A 15:  */\A 16:  .header {\A 17:  	position: relative;\A 18:  	height: $top-navbar-heigth;\A 19:  	padding: $top-navbar-vertical-padding $top-navbar-horizental-padding;\A 20:  	background-color: $top-navbar-bg-color;\A 21:  	z-index: 9;\A 22: \A 23:  	div { height: $top-navbar-div-height; }\A 24: \A 25:  	.title { display: table; }"; }
+.wrap-icon {
+  position: absolute;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-left: -10px;
+  cursor: pointer; }
+
+.yue-left-icon {
+  width: 48px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle; }
+  .yue-left-icon svg {
+    vertical-align: middle; }
+    .yue-left-icon svg path {
+      fill: #FFF; }
+
+.yue-top-search {
+  line-height: 48px;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box; }
+
+.yue-logo-font {
+  position: absolute;
+  display: inline-block;
+  margin-left: 48px; }
+  .yue-logo-font a {
+    color: #FFF;
+    font-size: 2em; }
+
+.yue-input-search {
+  width: 80%;
+  margin-left: 28%;
+  padding-left: 10px;
+  background-color: #83a4e0; }
+
+@media (max-width: 750px) {
+  .yue-input-search {
+    width: 35%;
+    margin-left: 35%; } }
+.yue-form-control span {
+  color: #FFF; }
+
+.yue-form-control input::-moz-placeholder {
+  color: #FFF; }
+
+.yue-form-control input::-webkit-input-placeholder {
+  color: #FFF; }
+
+.yue-form-control input:-ms-input-placeholder {
+  color: #FFF; }
+
+.yue-form-control input {
+  width: 100%;
+  margin-left: 5px;
+  padding: 2px 5px;
+  font-size: 16px;
+  color: #FFF;
+  border: none;
+  /* 隐藏input　获得光标时显示的边框*/
+  outline: medium;
+  background-color: transparent; }
+
+.login {
+  padding-left: 0px;
+  padding-right: 0px;
+  white-space: nowrap; }
+  .login a {
+    line-height: 48px;
+    margin-right: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    display: inline-block; }
+    .login a:hover {
+      color: #FFF; }
+
+/*# sourceMappingURL=TopNavbar.css.map */
