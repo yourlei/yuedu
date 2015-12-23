@@ -1,35 +1,32 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node',
-1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'grunt-contrib-jade',
-1 verbose cli   '--save-dev' ]
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install' ]
 2 info using npm@2.14.2
 3 info using node@v4.0.0
-4 verbose install initial load of /home/leiyu/program/MEAN/package.json
-5 verbose stack Error: Failed to parse json
-5 verbose stack Unexpected token 'm' at 27:6
-5 verbose stack     "moment": "^2.10.6",
-5 verbose stack      ^
-5 verbose stack     at parseError (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:379:11)
-5 verbose stack     at parseJson (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:68:23)
-5 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:48:5
-5 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (evalmachine.<anonymous>:380:3)
-6 verbose cwd /home/leiyu/program/MEAN
-7 error Linux 3.13.0-49-generic
-8 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "grunt-contrib-jade" "--save-dev"
-9 error node v4.0.0
-10 error npm  v2.14.2
-11 error file /home/leiyu/program/MEAN/package.json
-12 error code EJSONPARSE
-13 error Failed to parse json
-13 error Unexpected token 'm' at 27:6
-13 error     "moment": "^2.10.6",
-13 error      ^
-14 error File: /home/leiyu/program/MEAN/package.json
-15 error Failed to parse package.json data.
-15 error package.json must be actual JSON, not just JavaScript.
-15 error
-15 error This is not a bug in npm.
-15 error Tell the package author to fix their package.json file. JSON.parse
-16 verbose exit [ 1, true ]
+4 verbose readDependencies loading dependencies from /home/leiyu/Git/yuedu/package.json
+5 error install Couldn't read dependencies
+6 verbose stack Error: Failed to parse json
+6 verbose stack Trailing comma in object at 29:3
+6 verbose stack   },
+6 verbose stack   ^
+6 verbose stack     at parseError (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:379:11)
+6 verbose stack     at parseJson (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:68:23)
+6 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:48:5
+6 verbose stack     at FSReqWrap.readFileAfterClose [as oncomplete] (evalmachine.<anonymous>:380:3)
+7 verbose cwd /home/leiyu/Git/yuedu
+8 error Linux 3.13.0-49-generic
+9 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install"
+10 error node v4.0.0
+11 error npm  v2.14.2
+12 error file /home/leiyu/Git/yuedu/package.json
+13 error code EJSONPARSE
+14 error Failed to parse json
+14 error Trailing comma in object at 29:3
+14 error   },
+14 error   ^
+15 error File: /home/leiyu/Git/yuedu/package.json
+16 error Failed to parse package.json data.
+16 error package.json must be actual JSON, not just JavaScript.
+16 error
+16 error This is not a bug in npm.
+16 error Tell the package author to fix their package.json file. JSON.parse
+17 verbose exit [ 1, true ]
