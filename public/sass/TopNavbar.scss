@@ -61,6 +61,10 @@ $top-navbar-lineHeight: 48px;
   overflow: hidden;
   box-sizing: border-box;
 }
+.clear-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
 .yue-logo-font {
 	position: absolute;
 	display: inline-block;
@@ -71,17 +75,30 @@ $top-navbar-lineHeight: 48px;
 		font-size: 2em; 
 	}
 }
+/* begin width < 480px下，隐藏 logo-font */
+@media (max-device-width: 480px) {
+	.yue-logo-font {
+		display: none;
+	}
+}
+@media (max-device-width: 480px) and (orientation: landscape) {
+	.yue-logo-font {
+		display: none;
+	}
+}
+/* end  */
 .yue-input-search {
 	width: 80%;
 	margin-left: 28%;
 	padding-left: 10px;
 	background-color: rgb(131, 164, 224);
 }
+// error 
 @media (max-width: 750px) {
-	.yue-input-search {
-		width: 35%;
-		margin-left: 35%;
-	}
+	// .yue-input-search {
+	// 	width: 35%;
+	// 	margin-left: 35%;
+	// }
 }
 .yue-form-control span {
 	color: #FFF;
@@ -102,13 +119,13 @@ $top-navbar-lineHeight: 48px;
 	background-color: transparent;
 }
 .login {
-	padding-left: 0px;
-	padding-right: 0px;
+	padding-left: 0;
+	padding-right: 0;
 	white-space: nowrap;
-
+	margin-right: 0;
 	a {
 		line-height: 48px;
-		margin-right: 8px;
+		margin-right: 2px;
 		color: rgba(255, 255, 255, .8);
 		display: inline-block;
 

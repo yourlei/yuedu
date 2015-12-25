@@ -1,26 +1,34 @@
 $(document).ready(function() {
 	var leftNavbar  = $(".yue-left-fixed"),
 			mainContent = $(".yue-main-content"),
-			flag = true;
+			flag;
 
+	/* 单击　wrap-icon　隐藏或显示　left navbar */
 	$(".wrap-icon").click(function() {
-		if(flag) {
-			flag = !flag;
+		flag = leftNavbar.css("display");
+		
+		if(flag == "none") {
 			leftNavbar.animate({
-				 left: "-210px"
-			});
+				left: "0px"
+			}).show("fast");
 			mainContent.animate({
-				marginLeft: "0px"
+				marginLeft: "210px"
 			});
 		}
 		else {
-			flag = !flag;
 			leftNavbar.animate({
-				 left: "0px"
-			});
+				left: "-250px"
+			}).hide("fast");
 			mainContent.animate({
-				marginLeft: "210px"
+				marginLeft: "0px"
 			});	
 		}	
+		/* 单击左箭头隐藏left navbar */
+		$(".chevron-left").click(function() {
+			leftNavbar.animate({
+				left: "-250px"
+			}).hide("swing");
+		});
+
 	});
 });
