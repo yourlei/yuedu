@@ -53,13 +53,10 @@
 	  -webkit-align-items: center;
 	  align-items: center;
 	  /* 水平居中 */
-	  　/*老版本语法*/
-   　-webkit-box-pack: center; 
-   　-moz-box-pack: center; 
-   　/*混合版本语法*/
-   　-ms-flex-pack: center; 
-   　/*新版本语法*/
-   　-webkit-justify-content: center;
+	  -webkit-box-pack: center; 
+	  -moz-box-pack: center;
+	  -ms-flex-align: center;
+	  -webkit-justify-content: center;
 		justify-content: center;
 		text-align: center;
 		border: 1px solid #ccc;

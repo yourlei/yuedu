@@ -1,50 +1,60 @@
-/*
-Error: Invalid CSS after "...ox-pack: center": expected "{", was "; "
-        on line 57 of public/sass/login.scss
+@charset "UTF-8";
+.login-content {
+  text-align: center;
+  padding-top: 80px; }
+  .login-content .logo-font {
+    margin-bottom: 15px;
+    font-size: 48px;
+    color: cornflowerblue; }
+  .login-content .login-form {
+    width: 290px;
+    margin: 30px auto 15px; }
+  .login-content .form-group {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    white-space: nowrap; }
+    .login-content .form-group input {
+      height: 42px;
+      max-width: 248px;
+      margin-left: 42px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; }
+    .login-content .form-group .btn-primary {
+      width: 290px;
+      height: 42px;
+      border-radius: 0; }
+  .login-content .login-form-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 42px;
+    height: 42px;
+    /* 兼容旧版浏览器 */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    /* 新版浏览器 */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    /* 垂直居中 */
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    /* 水平居中 */
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-align: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    background-color: #FFF; }
 
-52: 	  -ms-flex-align: center;
-53: 	  -webkit-align-items: center;
-54: 	  align-items: center;
-55: 	  /* 水平居中 *\/
-56:    　/*老版本语法*\/
-57:    　-webkit-box-pack: center; 
-58:    　-moz-box-pack: center; 
-59:    　/*混合版本语法*\/
-60:    　-ms-flex-pack: center; 
-61:    　/*新版本语法*\/
-62:    　-webkit-justify-content: center;
-
-Backtrace:
-public/sass/login.scss:57
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:1163:in `expected'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:1097:in `expected'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:1092:in `tok!'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:637:in `block'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:657:in `block_child'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:649:in `block_contents'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:638:in `block'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:632:in `ruleset'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:656:in `block_child'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:646:in `block_contents'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:117:in `stylesheet'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/scss/parser.rb:42:in `parse'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:403:in `_to_tree'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:412:in `run'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...ox-pack: center\": expected \"{\", was \"; \"\A         on line 57 of public/sass/login.scss\A \A 52: 	  -ms-flex-align: center;\A 53: 	  -webkit-align-items: center;\A 54: 	  align-items: center;\A 55: 	  /* 水平居中 */\A 56:    　/*老版本语法*/\A 57:    　-webkit-box-pack: center; \A 58:    　-moz-box-pack: center; \A 59:    　/*混合版本语法*/\A 60:    　-ms-flex-pack: center; \A 61:    　/*新版本语法*/\A 62:    　-webkit-justify-content: center;"; }
+/*# sourceMappingURL=login.css.map */
