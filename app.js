@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 // ---------------------------------
 app.get('/signup', function (req, res) {
 	res.render('signup', {
-		title: '注册'
+		title: '登录'
 	});
 });
 
@@ -33,7 +33,7 @@ app.get('/signup', function (req, res) {
 // ----------------------------------
 app.get('/login', function (req, res) {
 	res.render('login', {
-		title: '登录'
+		title: '注册'
 	});
 });
 

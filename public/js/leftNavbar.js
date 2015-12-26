@@ -10,7 +10,7 @@ $(document).ready(function() {
 		if(flag == "none") {
 			leftNavbar.animate({
 				left: "0px"
-			}).show("fast");
+			}).show("linear");
 			mainContent.animate({
 				marginLeft: "210px"
 			});

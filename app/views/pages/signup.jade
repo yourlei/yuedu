@@ -1,19 +1,22 @@
-include ../layout
-block content
-	include ../includes/LeftNav
-	div.pure-u-1
-		section.head
-			h1 悦读
-	div.pure-u-1.pure-form-custom
-		form.pure-form.pure-form-aligned.pure-signup
-			div.pure-control-group
-				label 邮箱
-				input(type='email',placeholder='邮箱')
-			div.pure-control-group
-				label 用户
-				input(type='text', placeholder='用户名')
-			div.pure-control-group
-				label 密码
-				input(type='password', placeholder='密码')
-			div.pure-controls
-				button(type='submit').pure-button.pure-button-primary 注册
+doctype
+html(lang="zh-CN")
+	head
+		meta(charset = "utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title #{title}
+		link(href = '/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+		link(href = '/style/login.css', rel='stylesheet')
+	body
+		.container.login-content
+			h1.logo-font 悦读
+			h4.subtitle 分享您的故事，让世界听到您的声音
+			form.form-horizontal.login-form
+					.form-group
+						span.glyphicon.glyphicon-user.login-form-icon
+						input(type="text" name="username" placeholder="用户名").form-control
+					.form-group
+						span.glyphicon.glyphicon-lock.login-form-icon
+						input(type="password" name="password" placeholder="密码").form-control
+					.form-group
+						button(type="submit").btn.btn-lg.btn-primary 登录
+		script(src = '/libs/jquery/dist/jquery.min.js')
