@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .login-content {
   text-align: center;
   padding-top: 80px; }
@@ -27,13 +28,24 @@
     position: absolute;
     left: 0;
     top: 0;
-    display: -moz-flex;
-    display: -ms-flexbox;
-    display: flex;
     width: 42px;
     height: 42px;
-    justify-content: center;
+    /* 兼容旧版浏览器 */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    /* 新版浏览器 */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    /* 垂直居中 */
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
     align-items: center;
+    /* 垂直居中 */
+    justify-content: center;
     border: 1px solid #ccc;
     border-right: none;
     border-top-left-radius: 4px;
