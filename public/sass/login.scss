@@ -53,9 +53,12 @@
 	  -webkit-align-items: center;
 	  align-items: center;
 	  /* 水平居中 */
+	  /* 兼容旧版浏览器，移动端360浏览器，及UC */
 	  -webkit-box-pack: center; 
 	  -moz-box-pack: center;
 	  -ms-flex-align: center;
+	  -ms-flex-pack: center;
+	  /* 新版浏览器 */
 	  -webkit-justify-content: center;
 		justify-content: center;
 		text-align: center;
@@ -65,4 +68,13 @@
 		border-bottom-left-radius: 4px;
 		background-color: #FFF;
 	}
+}
+.form-warm {
+	display: block;
+	line-height: 18px;
+	margin-top: 2px;
+	text-align: left;
+	text-indent: 20px;
+	color: red;
+	background: url("/images/icons/form-warn.png") no-repeat left top;
 }
