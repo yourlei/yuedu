@@ -22,5 +22,5 @@ html(lang="zh-CN")
 						input(type="password" name="password" placeholder="不少于６位的密码").form-control
 					.form-group
 						button(type="submit").btn.btn-lg.btn-primary#login-btn 注册
-		script(src = '/libs/jquery/dist/jquery.min.js')
-		script(src = '/js/login.js')
+	script(src='/libs/requirejs/require.min.js' defer async="true")
+	script(src='/libs/requirejs/require.min.js' data-main='/js/login')

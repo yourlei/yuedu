@@ -19,5 +19,5 @@ html(lang="zh-CN")
 						input(type="password" name="password" placeholder="密码").form-control
 					.form-group
 						button(type="submit").btn.btn-lg.btn-primary 登录
-		script(src = '/libs/jquery/dist/jquery.min.js')
-		script(src = '/js/signup.js')
+	script(src='/libs/requirejs/require.min.js' defer async="true")
+	script(src='/libs/requirejs/require.min.js' data-main='/js/signup')

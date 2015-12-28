@@ -116,5 +116,7 @@ block content
 			.fixed-icon-pen
 				a(href="/")
 					span.glyphicon.glyphicon-pencil.icon-pen
-	script(src = '/libs/jquery/dist/jquery.min.js')
-	script(src = '/js/leftNavbar.js')
+	//script(src = '/libs/jquery/dist/jquery.min.js')
+	//script(src = '/js/leftNavbar.js')
+	script(src='/libs/requirejs/require.min.js' defer async="true")
+	script(src='/libs/requirejs/require.min.js' data-main='/js/main')

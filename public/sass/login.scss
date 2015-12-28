@@ -74,7 +74,18 @@
 	line-height: 18px;
 	margin-top: 2px;
 	text-align: left;
-	text-indent: 20px;
+	vertical-align: middle;
 	color: red;
-	background: url("/images/icons/form-warn.png") no-repeat left top;
+	// background: url("/images/icons/form-warn.png") no-repeat left top;
+  &:before {
+		content: "!";
+		display: inline-block;
+		width: 18px;
+		height: 18px;
+		margin-right: 4px;
+		text-align: center;
+		color: #FFF !important;
+		border-radius: 18px;
+		background-color: red;
+  }
 }

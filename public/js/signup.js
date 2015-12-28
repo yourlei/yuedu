@@ -1,6 +1,15 @@
- /*signup.js*/
-'use strict';
-$(document).ready(function() {
+ /*
+ * signup.js
+ * code by leiyu
+ * 28-12-2015
+*/
+require.config({
+	paths: {
+		"jquery": "../libs/jquery/dist/jquery.min"
+	}
+});
+
+define(['jquery'], function($) {
 	var email    = $("input[name='email']"),
 			password = $("input[name='password']");
 
@@ -34,7 +43,6 @@ $(document).ready(function() {
 			password.after('<span class="form-warm">请输入正确的密码</span>');
 			e.preventDefault();
 		};
-
 	});
 	
 	$('input').focus(function() {

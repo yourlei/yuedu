@@ -1,17 +1,26 @@
-/*login.js*/
-'use strict';
-$(document).ready(function() {
-	var email    = $("input[name='email']"),
+/*
+ * login.js
+ * code by leiyu
+ * 28-12-2015
+*/
+require.config({
+	paths: {
+		"jquery": "../libs/jquery/dist/jquery.min"
+	}
+});
+define(['jquery'], function($) {
+
+ 	var email    = $("input[name='email']"),
 			user     = $("input[name='user']"),
 			password = $("input[name='password']");
 
 	$('.login-form').submit(function(e) {
-		/* 移除掉所有警告*/
 
 		var emailInput = email.val(),
 			  emailChar	 = emailInput.indexOf('@'),
 			  emailDot   = emailInput.indexOf('.');
 
+		/* 移除掉所有警告*/
 		$('.form-warm').remove();
 
 		/*　邮箱输入为空　*/
@@ -41,7 +50,6 @@ $(document).ready(function() {
 			password.after('<span class="form-warm">请输入长度为6-16的密码</span>');
 			e.preventDefault();
 		};
-
 	});
 	
 	$('input').focus(function() {
