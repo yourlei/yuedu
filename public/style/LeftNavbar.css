@@ -55,7 +55,7 @@
     color: #333;
     text-indent: 30px; }
     .yue-left-navbar a:visited, .yue-left-navbar a:hover {
-      background-color: #E8E8E8; }
+      background-color: #EEE; }
     .yue-left-navbar a .icon-font {
       display: inline-block;
       font-size: 18px;
@@ -64,7 +64,7 @@
       margin-left: 10px; }
   .yue-left-navbar .active {
     color: cornflowerblue;
-    background-color: #E8E8E8; }
+    background-color: #EEE; }
 
 .yue-nav-item {
   padding-top: 16px; }

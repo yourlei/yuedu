@@ -35,7 +35,7 @@ define(['jquery'], function($) {
 		}
 
 		/*　用户名输入为空　*/
-		if ($.trim(user.val()) == "") {
+		if ($.trim(user.val()) === "") {
 			user.after('<span class="form-warm">请输入用户名</span>');
 			e.preventDefault();
 		}
@@ -49,7 +49,7 @@ define(['jquery'], function($) {
 		if (password.val() && password.val().length < 6) {
 			password.after('<span class="form-warm">请输入长度为6-16的密码</span>');
 			e.preventDefault();
-		};
+		}
 	});
 	
 	$('input').focus(function() {

@@ -4,15 +4,23 @@
 @import "./variable.scss";
 @import "./mixin.scss";
 
-body { background-color: $body-bg-color; }
+body { 
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	background-color: $body-bg-color;
+}
 @media only screen and (min-width: 750px) {
 	html, body {
 		font-size:  $font-size-base;
 	}
 }
-@media only screen and (min-device-width: 320px) and (max-device-width) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
 	html, body {
 	font-size:  $font-size-small;
+	}
+	h1 {
+		font-size: 32px;
 	}
 }
 a {

@@ -5,14 +5,15 @@
 */
 define(["jquery"], function($) {
 	'use strict';
-	function slideLeft(ele, opts) {
-		this.opts = $.extend({}, opts);
-		this.ele  = $(ele);
+	function SlideLeft(ele, opts) {
+		var self = this;
+		self.opts = $.extend({}, opts);
+		self.ele  = $(ele);
 
-		this.ele.on('click', $.proxy(this._animated, this));
+		self.ele.on('click', $.proxy(self._animated, self));
 	}
 
-	slideLeft.prototype._animated = function() {
+	SlideLeft.prototype._animated = function() {
 		/* 取的要执行动画效果的元素　*/
 		 var  target = $(this.opts.target),
 		      // container　元素
@@ -32,12 +33,12 @@ define(["jquery"], function($) {
   $.fn.extend({
   	slideLeft: function (opts) {
   		return this.each(function () {
-  			new slideLeft(this, opts)
-  		})
+  			new SlideLeft(this, opts);
+  		});
   	}
 	});
 	
 	return {
-		slideLeft: slideLeft
-	}
+		slideLeft: SlideLeft
+	};
 });

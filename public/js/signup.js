@@ -42,7 +42,7 @@ define(['jquery'], function($) {
 		if (password.val() && password.val().length < 6) {
 			password.after('<span class="form-warm">请输入正确的密码</span>');
 			e.preventDefault();
-		};
+		}
 	});
 	
 	$('input').focus(function() {
