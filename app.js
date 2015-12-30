@@ -40,9 +40,9 @@ app.get('/login', function (req, res) {
 // ----------------------------------
 
 // 详情页
-app.get('/detail', function (req, res) {
-	res.render('detail', {
-		title: 'detail page'
+app.get('/post', function (req, res) {
+	res.render('post', {
+		title: 'article'
 	});
 });
 
