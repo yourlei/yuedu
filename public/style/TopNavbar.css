@@ -98,9 +98,10 @@
 .login {
   padding-left: 0;
   padding-right: 0;
+  margin-right: 0;
+  border-top: 0;
   white-space: nowrap;
-  border: 0;
-  margin-right: 0; }
+  box-shadow: none; }
   .login a {
     line-height: 48px;
     margin-right: 2px;

@@ -119,9 +119,10 @@ $top-navbar-lineHeight: 48px;
 .login {
 	padding-left: 0;
 	padding-right: 0;
-	white-space: nowrap;
-	border: 0;
 	margin-right: 0;
+	border-top: 0;
+		white-space: nowrap;
+	box-shadow: none;
 	a {
 		line-height: 48px;
 		margin-right: 2px;
