@@ -139,6 +139,7 @@ a:hover {
   padding-left: 0;
   padding-right: 0;
   white-space: nowrap;
+  border: 0;
   margin-right: 0; }
   .login a {
     line-height: 48px;
