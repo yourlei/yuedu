@@ -22,11 +22,11 @@ define(["jquery"], function($) {
 		 // 检测leftNavbar的状态
 		 if(target.css('display') == 'none') {
 		 	 target.animate({left: "0"}).show("swing");
-		 	 mainContent.animate({marginLeft: "210px"});
+		 	 mainContent.animate({marginLeft: "210px"}, "slow");
 		 }
 		 else {
 		 	 target.animate({left: this.opts.left}).hide("linear");
-		 	 mainContent.animate({marginLeft: "0"});
+		 	 mainContent.animate({marginLeft: "0"}, "slow");
 		 }
 	};
 	// 封装成插件返回

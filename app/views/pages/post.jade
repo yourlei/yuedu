@@ -5,8 +5,28 @@ html(lang="zh-CN")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
 		title #{title}
 		link(href = '/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+		link(href = '/style/TopNavbar.css', rel='stylesheet')
 		link(href = '/style/post.css', rel='stylesheet')
 	body
+		.container-fluid.header
+			.row.navbar.yue-top-bar
+				.col-xs-10.col-sm-10.col-md-10
+					.wrap-icon
+						.yue-left-icon
+							svg(width="24px" height="24px" viewBox="0 0 48 48")
+								path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
+					.yue-top-search.clearfix
+						.yue-logo-font
+							a(href="/" style="cursor: pointer") 悦读
+							// a(href='/')	浏览	
+						//.yue-input-search
+							form(action="post").yue-form-control
+								span.glyphicon.glyphicon-search
+								input(type="search", placeholder='搜索')
+				.col-xs-2.col-sm-2.col-md-2.clear-padding
+					.navbar-collapse.navbar-right.login
+						a#register(href="/login") 注册
+						a#login(href="/signup") 登录
 		.container.article-wrap
 			header.row.author-info
 				section.col-md-2.col-xs-2
@@ -80,11 +100,13 @@ html(lang="zh-CN")
 							p 我老师也喜欢看书，到他的书从不再借，谁看可以去他家看,不可以带走
 						.comment-footer.text-right
 							span
-								span.comment-time 2015-12-30 23:42
+								span.comment-time 2015-12-31 23:42
 							a(href="")
 								span.glyphicon.glyphicon-heart.icon-font
 								span.good 赞
 							a(href="")
 								span.respond 回复
+	script(src='/libs/requirejs/require.min.js' defer async="true")
+	script(src='/libs/requirejs/require.min.js' data-main='/js/post')
 
 

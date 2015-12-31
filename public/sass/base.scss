@@ -7,6 +7,8 @@
 body { 
 	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
+	-webkit-text-align: justify;
+	text-align: justify;
 	-webkit-font-smoothing: antialiased;
 	background-color: $body-bg-color;
 }

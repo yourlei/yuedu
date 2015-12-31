@@ -10,6 +10,9 @@
 @import "./LeftNavbar.scss";
 
 /*-------------content----------------*/
+#main {
+	margin-top: 64px;
+}
 .yue-main-content {
 	position: relative;
 	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -35,11 +38,11 @@
  		margin: 0 auto !important;
 	}
 }
-@media only screen and (min-device-width: 320px) and (max-width: 480px) {
-	.yue-main-content {
- 		@include Margin(null, null, null, 80px);
-	}
-}
+// @media only screen and (min-device-width: 320px) and (max-width: 480px) {
+// 	.yue-main-content {
+//  		@include Margin(null, null, null, 80px);
+// 	}
+// }
 // post article
 .yue-content-post {
 	max-width: 530px;
@@ -92,9 +95,10 @@
 
 		a {
 			font-size: 20px;
-			white-space: break-word;
+			// color: #999;
+			transition: all 0.5s;
 			&:hover {
-				color: #333;
+				color: #666;
 			}
 		}
 	}
@@ -107,12 +111,12 @@
 		@include Margin(null, -15px, null, -15px);
 
 		.img {
-			left: 0;
+	/* 		left: 0;
 			top: 0;
 			right: 0;
-			bottom:0;
+			bottom:0; */
 			display: block;
-			width: 100%;
+			max-width: 100%;
 			height: auto;
 			margin: auto;
 		}

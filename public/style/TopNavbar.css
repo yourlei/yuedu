@@ -7,7 +7,10 @@
  * header
  */
 .header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   height: 68px;
   padding: 10px 8px;
   background-color: cornflowerblue;
@@ -59,10 +62,7 @@
     font-size: 2em; }
 
 /* begin width < 480px下，隐藏 logo-font */
-@media (max-device-width: 480px) {
-  .yue-logo-font {
-    display: none; } }
-@media (max-device-width: 480px) and (orientation: landscape) {
+@media (max-device-width: 480px), (max-width: 480px) {
   .yue-logo-font {
     display: none; } }
 /* end  */

@@ -19,7 +19,10 @@ $top-navbar-lineHeight: 48px;
  * header
  */
  .header {
- 	position: relative;
+ 	position: fixed;
+ 	left: 0;
+ 	top: 0;
+ 	width: 100%;
  	height: $top-navbar-heigth;
  	padding: $top-navbar-vertical-padding $top-navbar-horizental-padding;
  	background-color: cornflowerblue;
@@ -76,12 +79,7 @@ $top-navbar-lineHeight: 48px;
 	}
 }
 /* begin width < 480px下，隐藏 logo-font */
-@media (max-device-width: 480px) {
-	.yue-logo-font {
-		display: none;
-	}
-}
-@media (max-device-width: 480px) and (orientation: landscape) {
+@media (max-device-width: 480px), (max-width: 480px) {
 	.yue-logo-font {
 		display: none;
 	}
