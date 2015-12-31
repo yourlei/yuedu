@@ -46,6 +46,10 @@ a {
 .header {
   background-color: #6C6; }
 
+.post-logo-font {
+  display: inline-block;
+  margin-left: 35px; }
+
 .article-wrap {
   max-width: 700px;
   padding: 20px;

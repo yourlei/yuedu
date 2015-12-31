@@ -12,12 +12,13 @@ require.config({
 define(["jquery"], function($) {
 	// scroll(function(direction) { console.log(direction) });    
 	function scroll() {
-    var beforeScrollTop = document.body.scrollTop;
+    var win = $(window),
+        beforeScrollTop = win.scrollTop();
 
-    window.addEventListener("scroll", function() {
-      var afterScrollTop = document.body.scrollTop,
+    win.on("scroll", function() {
+      var afterScrollTop = win.scrollTop(),
           delta = afterScrollTop - beforeScrollTop;
-
+ 
       if( delta === 0 ){
       	return false;
       } 
@@ -30,7 +31,7 @@ define(["jquery"], function($) {
       else {
       	$(".header").slideDown();
       }
-    }, false);
+    });
 	}
 	scroll();
 });
