@@ -1,72 +1,30 @@
-@charset "UTF-8";
-/* 
- * leftsidebar 左侧边栏
- */
-.yue-left-fixed {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  display: none;
-  height: 100%;
-  z-index: 8;
-  /* only screen width < 640px display */ }
-  .yue-left-fixed .left-navbar-logo {
-    position: absolute;
-    height: 48px;
-    display: none;
-    padding-left: 30px;
-    padding-top: 10px;
-    line-height: 48px;
-    font-size: 1.5em;
-    color: #333; }
-    .yue-left-fixed .left-navbar-logo span {
-      display: inline-block;
-      line-height: 48px;
-      vertical-align: middle; }
-    .yue-left-fixed .left-navbar-logo .chevron-left {
-      margin-left: 100px;
-      font-size: 16px;
-      cursor: pointer; }
+/*
+Sass::SyntaxError: ".yue-left-navbar a" failed to @extend ".flex-box".
+The selector ".flex-box" was not found.
+Use "@extend .flex-box !optional" if the extend should be able to fail.
 
-/* screen width > 768px display */
-@media screen and (min-width: 768px) {
-  .yue-left-fixed {
-    display: block;
-    width: 210px; } }
-@media (max-width: 640px) {
-  .yue-left-fixed {
-    left: -250px;
-    width: 250px;
-    background-color: #FFF;
-    box-shadow: 2px 1px 5px #ccc;
-    z-index: 9; }
-    .yue-left-fixed .left-navbar-logo {
-      display: block; } }
-.yue-left-navbar {
-  width: 100%;
-  height: 100%;
-  margin-top: 64px; }
-  .yue-left-navbar a {
-    width: 100%;
-    display: block;
-    padding-left: 10px;
-    line-height: 48px;
-    color: #333;
-    text-indent: 30px; }
-    .yue-left-navbar a:visited, .yue-left-navbar a:hover {
-      background-color: #EEE; }
-    .yue-left-navbar a .icon-font {
-      display: inline-block;
-      font-size: 18px;
-      margin-left: -41px; }
-    .yue-left-navbar a .item-content {
-      margin-left: 10px; }
-  .yue-left-navbar .active {
-    color: cornflowerblue;
-    background-color: #EEE; }
 
-.yue-nav-item {
-  padding-top: 16px; }
-
-/*# sourceMappingURL=LeftNavbar.css.map */
+Backtrace:
+public/sass/LeftNavbar.scss:44
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/extend.rb:65:in `block in check_extends_fired!'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/util/subset_map.rb:105:in `block in each_value'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/util/subset_map.rb:105:in `each'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/util/subset_map.rb:105:in `each_value'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/extend.rb:50:in `check_extends_fired!'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/extend.rb:16:in `visit'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/root_node.rb:39:in `css_tree'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:412:in `run'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:63:in `process_result'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
+/var/lib/gems/1.9.1/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Sass::SyntaxError: \".yue-left-navbar a\" failed to @extend \".flex-box\".\A The selector \".flex-box\" was not found.\A Use \"@extend .flex-box !optional\" if the extend should be able to fail.\A "; }

@@ -14,19 +14,30 @@ define(["jquery"], function($) {
 	}
 
 	SlideLeft.prototype._animated = function() {
-		/* 取的要执行动画效果的元素　*/
-		 var  target = $(this.opts.target),
-		      // container　元素
-					mainContent = $(".yue-main-content");
 
+		 var  target = $(this.opts.target),　　　　　　　　　//　左边栏div元素
+					mainContent = $(".yue-main-content"),　// container　元素
+		      regRule = /matrix\(.*,\s*(\w+)\)/,　　　// 提取tansformX属性值的正则表达式
+		 		  transform = target.css('transform'),　//取得属性值
+		 		  result = regRule.exec(transform)[0].split(',')[4];
+		 
+		 // console.log(/\s*(\w+)/.exec(result[0]));
+		 // console.log(transform);
+		 
 		 // 检测leftNavbar的状态
-		 if(target.css('display') == 'none') {
-		 	 target.animate({left: "0"}).show("swing");
-		 	 mainContent.animate({marginLeft: "210px"}, "slow");
+		 if( Number.parseInt(result) < 0) {
+		 	 // target.css({display: 'block'}).animate({left: "0px"});
+		 	 target.css({transform: "translateX(0)"});
+		 	 mainContent.css({transform: "translateX(100px)"});
+		 	 // target.addClass('is-visible ')
+		 	 // alert('hide')
 		 }
 		 else {
-		 	 target.animate({left: this.opts.left}).hide("linear");
-		 	 mainContent.animate({marginLeft: "0"}, "slow");
+		 	 // target.css({display: 'none'}).animate({left: '-250px'});
+		 	 target.css({transform: "translateX(-240px)"});
+		 	 mainContent.css({transform: "translateX(0)"});
+		 	 // target.addClass('not-visible ')
+		 	 // alert('show');
 		 }
 	};
 	// 封装成插件返回

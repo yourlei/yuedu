@@ -8,25 +8,23 @@ html(lang="zh-CN")
 		link(href = '/style/TopNavbar.css', rel='stylesheet')
 		link(href = '/style/post.css', rel='stylesheet')
 	body
-		.container-fluid.header
-			.row.navbar.yue-top-bar
-				.col-xs-10.col-sm-10.col-md-10
-					.wrap-icon
-						.yue-left-icon
-							svg(width="24px" height="24px" viewBox="0 0 48 48")
-								path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
-					.yue-top-search.clearfix
-						.yue-logo-font.post-logo-font
-							a(href="/" style="cursor: pointer") 悦读
-							// a(href='/')	浏览	
-						//.yue-input-search
-							form(action="post").yue-form-control
-								span.glyphicon.glyphicon-search
-								input(type="search", placeholder='搜索')
-				.col-xs-2.col-sm-2.col-md-2.clear-padding
-					.navbar-collapse.navbar-right.login
-						a#register(href="/login") 注册
-						a#login(href="/signup") 登录
+		.container.top-nav.header
+			.col-xs-10.col-sm-10.col-md-10.md-layout.no-padding
+				.drawer-btn
+					svg(width="24px" height="24px" viewBox="0 0 48 48")
+									path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
+				.yue-navbar
+					span.yue-logo-title 悦读
+					//form(action="post").yue-form-search
+						span.glyphicon.glyphicon-search.search-icon
+						input(type="search", placeholder='搜索')
+			.col-xs-2.col-sm-2.col-md-2.md-layout.no-padding
+				nav.nav-group
+					li.flex-box.vertical-center
+						a#register(href="/login" target="_blank") 注册
+					li.flex-box.vertical-center
+						a#login(href="/signup" target="_blank") 登录
+		// include ../includes/leftNavbar
 		.container.article-wrap
 			header.row.author-info
 				section.col-md-2.col-xs-2
@@ -87,7 +85,11 @@ html(lang="zh-CN")
 							span  收藏
 			.comment
 				.comment-head
-					a(href="").add-comment
+					.hide-area
+						.comment-area
+							textarea.commet-text
+							input.btn.btn-primary.comment-btn(type="submit" value="发表")
+					span.add-comment
 						span.glyphicon.glyphicon-pencil
 						span 添加评论
 				.comment-content

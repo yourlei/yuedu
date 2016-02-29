@@ -1,0 +1,18 @@
+.container.top-nav
+	.col-xs-10.col-sm-10.col-md-10.md-layout.no-padding
+		.drawer-btn
+			svg(width="24px" height="24px" viewBox="0 0 48 48")
+							path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
+		.yue-navbar
+			span.yue-logo-title 悦读
+			form(action="post").yue-form-search
+				span.glyphicon.glyphicon-search.search-icon
+				input(type="search", placeholder='搜索')
+	.col-xs-2.col-sm-2.col-md-2.md-layout.no-padding
+		nav.nav-group
+			li.flex-box.vertical-center
+				a#register(href="/login" target="_blank") 注册
+			li.flex-box.vertical-center
+				a#login(href="/signup" target="_blank") 登录 
+
+

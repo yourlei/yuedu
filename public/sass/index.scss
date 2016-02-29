@@ -10,8 +10,13 @@
 @import "./LeftNavbar.scss";
 
 /*-------------content----------------*/
-#main {
-	margin-top: 64px;
+// #main {
+// 	margin-top: 64px;
+// }
+@media only screen and (min-width: 970px) {
+	// #main {
+ // 		@include Margin(null, null, null, 210px);
+	// }
 }
 .yue-main-content {
 	position: relative;
@@ -19,7 +24,12 @@
 	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
 	display: -ms-flexbox;      /* TWEENER - IE 10 */
 	display: -webkit-flex;     /* NEW - Chrome */
-	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	display: flex;            /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	
+	transition: transform .2s;
+	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+	transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+	transform-style: preserve-3d;
 	white-space: nowrap;
 }
 .yue-content {
@@ -28,9 +38,26 @@
 	text-align: center;
 	z-index: 8;
 }
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 992px) {
 	.yue-main-content {
- 		@include Margin(null, null, null, 210px);
+ 		//@include Margin(null, null, null, 210px);
+ 		width: 960px;
+ 		margin: auto;
+ 		// left: 100px;
+	  -webkit-transform: translateX(100px);
+	  transform: translateX(100px);
+
+	}
+}
+@media only screen and (max-width: 1280px) {
+	.yue-main-content {
+ 		//@include Margin(null, null, null, 210px);
+ 		// width: 960px;
+ 		// margin: auto;
+ 		// left: 100px;
+	  -webkit-transform: translateX(0) !important;
+	  transform: translateX(0) !important;
+
 	}
 }
 @media only screen and (max-width: 750px) {

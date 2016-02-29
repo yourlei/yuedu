@@ -25,6 +25,9 @@ body {
 		font-size: 32px;
 	}
 }
+ul,li {
+	list-style: none;
+}
 a {
 	text-decoration: none;
 	color: $link-normal-color;

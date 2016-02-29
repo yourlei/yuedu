@@ -32,6 +32,9 @@ body {
 
   h1 {
     font-size: 32px; } }
+ul, li {
+  list-style: none; }
+
 a {
   text-decoration: none;
   color: #333; }
@@ -179,11 +182,35 @@ a {
   border-top: 1px solid #FFCBCB; }
 
 .comment-head {
-  text-align: right; }
+  position: relative; }
+
+.hide-area {
+  display: none; }
+
+.comment-area {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: row wrap; }
+
+.commet-text {
+  padding: 10px;
+  width: 100%;
+  height: 120px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #FFCBCB; }
+
+.comment-btn {
+  width: 70px; }
 
 .add-comment {
+  position: absolute;
+  right: 0;
+  width: 90px;
+  transition: all 0.5s;
+  display: inline-block;
   color: #999;
-  transition: all 0.5s; }
+  cursor: pointer; }
   .add-comment:hover {
     color: #333; }
 
