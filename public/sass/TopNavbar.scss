@@ -284,7 +284,7 @@ begin width < 480px下，隐藏 logo-font
 	}
 }
 @media (max-device-width: 480px), (max-width: 480px) {
-	.nav-group {
+	.hide-nav-group {
 		display: none;
 	}
 }

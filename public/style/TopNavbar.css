@@ -215,7 +215,7 @@ begin width < 480px下，隐藏 logo-font
     color: #FFF; }
 
 @media (max-device-width: 480px), (max-width: 480px) {
-  .nav-group {
+  .hide-nav-group {
     display: none; } }
 
 /*# sourceMappingURL=TopNavbar.css.map */
