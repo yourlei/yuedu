@@ -150,7 +150,7 @@ begin width < 480px下，隐藏 logo-font
 /* begin width < 480px下，隐藏 logo-font */
 @media (max-device-width: 480px), (max-width: 480px) {
   .yue-logo-title {
-    font-size: 1em;
+    font-size: 18px;
     margin-left: 2px; }
 
   .drawer-btn {
@@ -177,6 +177,7 @@ begin width < 480px下，隐藏 logo-font
     margin-left: 60px; } }
 @media (max-width: 480px) {
   .yue-form-search {
+    width: 60%;
     margin-left: 18px; } }
 .yue-form-search input::-moz-placeholder {
   color: #FFF; }
@@ -212,5 +213,9 @@ begin width < 480px下，隐藏 logo-font
     display: inline-block;
     padding-left: 4px;
     color: #FFF; }
+
+@media (max-device-width: 480px), (max-width: 480px) {
+  .nav-group {
+    display: none; } }
 
 /*# sourceMappingURL=TopNavbar.css.map */

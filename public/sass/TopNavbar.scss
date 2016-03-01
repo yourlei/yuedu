@@ -216,7 +216,7 @@ begin width < 480px下，隐藏 logo-font
 /* begin width < 480px下，隐藏 logo-font */
 @media (max-device-width: 480px), (max-width: 480px) {
 	.yue-logo-title {
-		font-size: 1em;
+		font-size: 18px;
 		margin-left: 2px;
 	}
 	.drawer-btn {width: 48px;}
@@ -251,7 +251,7 @@ begin width < 480px下，隐藏 logo-font
 	.yue-form-search { margin-left: 60px;}
 }
 @media (max-width: 480px) {
-	.yue-form-search { margin-left: 18px;}
+	.yue-form-search { width: 60%; margin-left: 18px;}
 }
 // 搜索框中占位符字体颜色
 .yue-form-search input::-moz-placeholder { color: #FFF; }
@@ -281,5 +281,10 @@ begin width < 480px下，隐藏 logo-font
 		display: inline-block;
 		padding-left: 4px;
 		color: #FFF;
+	}
+}
+@media (max-device-width: 480px), (max-width: 480px) {
+	.nav-group {
+		display: none;
 	}
 }
