@@ -118,16 +118,11 @@ begin width < 480px下，隐藏 logo-font
 /* end  */
 /********************************/
 /* 2016-02-24 */
-.md-layout {
-  display: -webkit-flex;
-  display: flex;
-  white-space: nowrap; }
-
 .no-padding {
   padding-left: 0;
   padding-right: 0; }
 
-.flex-box, .top-nav, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group, .yue-left-navbar a, .yue-nav-item {
+.flex-box, .md-layout, .top-nav, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group, .yue-left-navbar a, .yue-nav-item {
   /* 兼容旧版浏览器 */
   display: -webkit-box;
   display: -moz-box;
@@ -137,7 +132,7 @@ begin width < 480px下，隐藏 logo-font
   display: -moz-flex;
   display: flex; }
 
-.vertical-center, .drawer-btn, .yue-navbar, .yue-form-search, .yue-left-navbar a {
+.vertical-center, .md-layout, .drawer-btn, .yue-navbar, .yue-form-search, .yue-left-navbar a {
   /* 垂直居中 */
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -155,6 +150,10 @@ begin width < 480px下，隐藏 logo-font
   /* 新版浏览器 */
   -webkit-justify-content: center;
   justify-content: center; }
+
+.md-layout {
+  flex-flow: row nowrap;
+  white-space: nowrap; }
 
 /* ************************** */
 .top-nav {

@@ -137,12 +137,6 @@ begin width < 480px下，隐藏 logo-font
  
 /********************************/
 /* 2016-02-24 */
-.md-layout {
-	display: -webkit-flex;
-	display: flex;
-	white-space: nowrap;
-	// overflow: hidden;
-}
 .no-padding {
 	padding-left: 0;
 	padding-right: 0;
@@ -175,6 +169,12 @@ begin width < 480px下，隐藏 logo-font
 	  /* 新版浏览器 */
 	  -webkit-justify-content: center;
 		justify-content: center;
+}
+.md-layout {
+	@extend .flex-box, .vertical-center;
+	flex-flow: row nowrap;
+	white-space: nowrap;
+	// overflow: hidden;
 }
 /* ************************** */
 .top-nav {
