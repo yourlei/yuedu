@@ -173,7 +173,8 @@ begin width < 480px下，隐藏 logo-font
     fill: #FFF; }
 
 .yue-navbar {
-  height: 68px; }
+  height: 68px;
+  white-space: nowrap; }
 
 .yue-logo-title {
   display: inline-block;
@@ -194,7 +195,10 @@ begin width < 480px下，隐藏 logo-font
 @media (max-device-width: 480px), (max-width: 480px) {
   .yue-logo-title {
     font-size: 1em;
-    margin-left: 2px; } }
+    margin-left: 2px; }
+
+  .drawer-btn {
+    width: 48px; } }
 /* end  */
 .yue-form-search {
   min-height: 48px;

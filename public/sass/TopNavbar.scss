@@ -198,6 +198,7 @@ begin width < 480px下，隐藏 logo-font
 }
 .yue-navbar {
 	height: $top-navbar-heigth;
+	white-space: nowrap;
 	@extend .flex-box;
 	@extend .vertical-center;
 }
@@ -218,6 +219,7 @@ begin width < 480px下，隐藏 logo-font
 		font-size: 1em;
 		margin-left: 2px;
 	}
+	.drawer-btn {width: 48px;}
 }
 /* end  */
 

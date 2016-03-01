@@ -49,6 +49,10 @@ a {
 .header {
   background-color: #6C6; }
 
+@media (max-device-width: 480px), (max-width: 480px) {
+  .yue-logo-title {
+    font-size: 2em;
+    margin-left: 10px; } }
 .post-logo-font {
   display: inline-block;
   margin-left: 35px; }
