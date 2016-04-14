@@ -1,64 +1,59 @@
 var express = require('express'),
-		port = process.env.PORT || 3000,
+		mongoose = require("mongoose"),
 		path =  require('path'),
-		app = express();
+		bodyParser = require('body-parser'),
+		cookieParser = require('cookie-parser'),
+		morgan = require('morgan'),
+		session = require('express-session'),
+		mongoStore = require('connect-mongo')(session),
+		mditor = require("mditor"),
+		port = process.env.PORT || 3000,
+		app = express(),
+		db = mongoose.connection;
+
+mongoose.connect('mongodb://127.0.0.1:27017/yuedu');
+
+db.once('open', function() {
+	console.log('mongodb succefully connect.')
+});
+
+// markdown 文本解析
+var parser = mditor.Parser();
+//var html = parser.parse("** Hello mditor! **");
+
+app.locals.moment = require('moment');	
 
 // 设置视图文件夹，渲染引擎
 app.set('views', './app/views/pages');
 app.set('view engine', 'jade');
 
-
+// __dirname: 指当前目录
 app.use(express.static(path.join(__dirname,'public')));
 
-// 设置路由
-// 路由中render响应的文件（index, detail, list, admin）都是相对于views文件夹下的文件
-// 首页
-app.get('/', function (req, res) {
-	res.render('index', {
-		title: '悦读'
+// 通过body-parser中间件解析url，json数据
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
+app.use(cookieParser());
+app.use(session({
+	secret: 'yuedu',
+	store: new mongoStore({
+    url : 'mongodb://127.0.0.1:27017/yuedu',
+    collection: 'sessions'
+	}),
+  	resave:false,
+  	saveUninitialized:true
 	})
-});
+);
 
-// ---------------------------------
-//             注册页
-// ---------------------------------
-app.get('/signup', function (req, res) {
-	res.render('signup', {
-		title: '登录'
-	});
-});
-
-// ----------------------------------
-//              登录页
-// ----------------------------------
-app.get('/login', function (req, res) {
-	res.render('login', {
-		title: '注册'
-	});
-});
-
-// ----------------------------------
-
-// 详情页
-app.get('/post', function (req, res) {
-	res.render('post', {
-		title: 'article'
-	});
-});
-
-// 列表页
-app.get('/list', function (req, res) {
-	res.render('list', {
-		title: 'list page'
-	});
-});
-
-// 后台页
-app.get('/admin', function (req, res) {
-	res.render('admin', {
-		title: 'admin page'
-	});
-});
+// 生产环境调试配置
+if ('development' === app.get('env')) {
+	app.set('showStackError', true);
+ 	app.use(morgan('combined :method :url :status'));
+	app.locals.pretty = true;
+	mongoose.set('debug', true);
+}
+require("./config/routers")(app);
 
 app.listen(port, function() {
 	console.log('server runing on 3000 port.')

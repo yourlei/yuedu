@@ -1,0 +1,36 @@
+doctype
+html(lang="zh-CN")
+	head
+		meta(charset = "utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title #{title}
+		link(href = '/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+		link(href = '/style/userhome.css', rel='stylesheet')
+	body
+		.header
+			nav
+				li
+					a(href='/')
+						span.glyphicon.glyphicon-home
+						span 返回主页
+		.container
+			.col-md-3
+				.side
+					li.side-top
+						a.avatar
+							img(src="/images/avatar.jpeg")
+						.user-info
+							span #{user.name}
+					li.user-data
+						span  写了10000字
+						span 文章 10
+						span 收藏 9
+			.col-md-9
+				.main
+					.post-item
+						.content
+							.wrap
+								.img
+									a
+										img(src="/images/post-img-1.jpg")
+							.text

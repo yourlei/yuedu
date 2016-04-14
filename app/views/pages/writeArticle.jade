@@ -1,0 +1,48 @@
+doctype
+html(lang="zh-CN")
+	head
+		meta(charset = "utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title #{title}
+		link(href = '/style/write.css', rel='stylesheet')
+		link(href = '/build/css/mditor.css', rel='stylesheet')
+	body
+		span.meta-btn
+			i.fa.fa-reorder
+		form(method="POST" action="")
+			//.btn-line
+			input(type="text" name="article[title]" placeholder="").title
+			textarea(name="article[content]" id="editor")
+			//.btn-line
+				button(type='submit').btn-primary 发布
+		.fix-bar
+			ul.nav-bar
+				li.logo
+					a(href="/") 
+						//img(src="/images/avatar.jpeg")
+						悦读
+				li.item
+					a(href="").active
+						i.fa.fa-pencil.icon-font
+						span.hidden-box
+							i.hidden 写文章
+				li.item 
+					a(href="")
+						i.fa.fa-home.icon-font
+						span.hidden-box
+							i.hidden 我的主页
+				li.item 
+					a(href="")
+						i.fa.fa-envelope.icon-font
+						span.hidden-box
+							i.hidden 收藏夹
+				li.item 
+					a(href="")
+						i.fa.fa-sign-out.icon-font
+						span.hidden-box
+							i.hidden 登出
+	script(src='/libs/requirejs/require.min.js' defer async="true") 
+	script(src='/build/js/mditor.js')
+	script(src='/libs/jquery/dist/jquery.min.js')
+	script(src='/js/mditor.js')
+
