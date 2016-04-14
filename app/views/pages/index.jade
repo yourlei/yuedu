@@ -6,29 +6,30 @@ block content
 		.row
 			.yue-main-content
 				.yue-content
-					.col-md-6.col-lg-6
-						.yue-content-post
-							.user-info
-								a(href="#" target="_blank")
-									span.glyphicon.glyphicon-user.user-logo
-									span.user-name Leiyu
-								span.post-time 9小时前
-							.article-title
-								a(href="/post" target="_blank") 2015-我读过的那些书
-							a.img-box(href="")
-								img.img(src="/images/post-img-1.jpg")
-							.post-footer
-								a(href="") 
-									span 阅读
-									span (229)
-								a(href="") 
-									span 评论
-									span (99)
-								a(href="") 
-									span 分享
-								a(href="") 
-									span.glyphicon.glyphicon-heart.icon-heart
-						.yue-content-post
+					each item in articles
+						.col-md-6.col-lg-6
+							.yue-content-post
+								.user-info
+									a(href="#" target="_blank")
+										span.glyphicon.glyphicon-user.user-logo
+										span.user-name #{item.author}
+									span.post-time 9小时前
+								.article-title
+									a(href="/post" target="_blank") #{item.title}
+								a.img-box(href="")
+									img.img(src="#{item.cover}")
+								.post-footer
+									a(href="") 
+										span 阅读
+										span (229)
+									a(href="") 
+										span 评论
+										span (99)
+									a(href="") 
+										span 分享
+									a(href="") 
+										span.glyphicon.glyphicon-heart.icon-heart
+						//-.yue-content-post
 							.user-info
 								a(href="#" target="_blank")
 									span.glyphicon.glyphicon-user.user-logo
@@ -49,7 +50,7 @@ block content
 									span 分享
 								a(href="") 
 									span.glyphicon.glyphicon-heart.icon-heart
-						.yue-content-post
+						//-.yue-content-post
 							.user-info
 								a(href="#" target="_blank")
 									span.glyphicon.glyphicon-user.user-logo
@@ -70,7 +71,7 @@ block content
 									span 分享
 								a(href="") 
 									span.glyphicon.glyphicon-heart.icon-heart
-					.col-md-6.col-lg-6
+					//-.col-md-6.col-lg-6
 						.yue-content-post
 							.user-info
 								a(href="#" target="_blank")
@@ -92,7 +93,7 @@ block content
 									span 分享
 								a(href="") 
 									span.glyphicon.glyphicon-heart.icon-heart
-						.yue-content-post
+						//-.yue-content-post
 							.user-info
 								a(href="#" target="_blank")
 									span.glyphicon.glyphicon-user.user-logo
@@ -114,9 +115,7 @@ block content
 								a(href="") 
 									span.glyphicon.glyphicon-heart.icon-heart
 			.fixed-icon-pen
-				a(href="/")
+				a(href="/write")
 					span.glyphicon.glyphicon-pencil.icon-pen
-	//script(src = '/libs/jquery/dist/jquery.min.js')
-	//script(src = '/js/leftNavbar.js')
 	script(src='/libs/requirejs/require.min.js' defer async="true")
 	script(src='/libs/requirejs/require.min.js' data-main='/js/main')

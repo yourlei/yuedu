@@ -269,8 +269,10 @@ begin width < 480px下，隐藏 logo-font
 	background-color: transparent;
 }
 .search-icon {color: #FFF;}
+
 /* nav group */
 .nav-group {
+	position: relative;
 	width: 100%;
 	min-height: 48px;
 	@extend .flex-box;
@@ -281,6 +283,89 @@ begin width < 480px下，隐藏 logo-font
 		display: inline-block;
 		padding-left: 4px;
 		color: #FFF;
+	}
+	.avatar {
+	  width: 68px;
+	  height: 68px;
+	  padding-left: 0;
+	  text-align: center;
+	  overflow: hidden;
+	  cursor: pointer;
+	  @extend .flex-box,.vertical-center,.horizontal-center;
+
+	  img {
+	  	width: 58px;
+	  	height: 58px; 
+	  	border-radius: 48px;
+		  border: 2px solid rgb(152, 83, 201);
+	  }
+	}
+	.user-car {
+		position: absolute;
+		top: 68px;
+		right: 0;
+		width: 300px;
+		display: none;
+		padding-top: 10px;
+
+		&:before {
+			content: '';
+			float: right;
+			width: 0;
+			height: 0;
+			display: inline-block;
+			margin-right: 25px;
+			margin-top: -10px;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-bottom: 10px solid #6495ED;
+		}
+	}
+	
+	.user-car-inner {
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	}
+	.user-car-top {
+		@extend .flex-box,.vertical-center;
+		height: 100px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background-color: #6495ED;
+
+		img {
+			width: 68px;
+			height: 68px;
+			border-radius: 68px;
+			border: 2px solid #FFF;
+		}
+		.user-meta {
+			padding-left: 15px;
+		}
+		.user-post {
+			padding-top: 8px;
+		}
+	}
+	.user-car-footer {
+		position: relative;
+		height: 70px;
+		padding-left: 15px;
+		padding-right: 15px;
+		background-color: #EEE;
+
+		a {
+			position: absolute;
+			color: #333;
+		}
+		a:nth-child(1) {
+			bottom: 0;
+		}
+		a:nth-child(2) {
+			right: 15px;
+			bottom: 0;
+		}
+		i {
+			padding-right: 8px;
+		}
 	}
 }
 @media (max-device-width: 480px), (max-width: 480px) {

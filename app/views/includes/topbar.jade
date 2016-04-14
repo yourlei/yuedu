@@ -10,9 +10,33 @@
 				input(type="search", placeholder='搜索')
 	.col-xs-2.col-sm-2.col-md-2.md-layout.no-padding
 		nav.nav-group
-			li.flex-box.vertical-center
-				a#register(href="/login" target="_blank") 注册
-			li.flex-box.vertical-center
-				a#login(href="/signup" target="_blank") 登录 
+			if user
+				li.flex-box.vertical-center
+					//a 欢迎 #{user.name}
+					a.avatar
+						img(src="/images/avatar.jpeg")
+				li.user-car
+					.user-car-inner
+						.user-car-top
+							a(href="" target="")
+								img(src="/images/avatar.jpeg")
+							.user-meta
+								a(href="" target="")
+									span.user-name #{user.name}
+								br
+								a(href="" target="").user-post
+									span 文章数  10
+						.user-car-footer
+							a(href="/write" target="_self") 
+								i.glyphicon.glyphicon-pencil
+								span 写文章
+							a(href="/logout" target="_self") 
+								i.glyphicon.glyphicon-log-out
+								span 登出
+			else
+				li.flex-box.vertical-center
+					a#register(href="/signup" target="_blank") 注册
+				li.flex-box.vertical-center
+					a#login(href="/signin" target="_blank") 登录 
 
 

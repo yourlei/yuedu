@@ -10,14 +10,17 @@ html(lang="zh-CN")
 		.container.login-content
 			h1.logo-font 悦读
 			h4.subtitle 分享您的故事，让世界听见您的声音
-			form(action="/" method="").form-horizontal.login-form#sign-up
+			form(method="POST", action="/signup").form-horizontal.login-form
+					.form-group
+						span.glyphicon.glyphicon-envelope.login-form-icon
+						input(type="email" name="user[email]" placeholder="您的邮箱地址").form-control
 					.form-group
 						span.glyphicon.glyphicon-user.login-form-icon
-						input(type="email" name="email" placeholder="邮箱").form-control
+						input(type="text" name="user[name]" placeholder="用户名").form-control
 					.form-group
 						span.glyphicon.glyphicon-lock.login-form-icon
-						input(type="password" name="password" placeholder="密码").form-control
+						input(type="password" name="user[password]" placeholder="不少于６位的密码").form-control
 					.form-group
-						button(type="submit").btn.btn-lg.btn-primary 登录
+						button(type="submit").btn.btn-lg.btn-primary#login-btn 注册
 	script(src='/libs/requirejs/require.min.js' defer async="true")
-	script(src='/libs/requirejs/require.min.js' data-main='/js/signup')
+	//-script(src='/libs/requirejs/require.min.js' data-main='/js/login')

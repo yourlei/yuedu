@@ -1,30 +1,116 @@
-/*
-Sass::SyntaxError: ".yue-left-navbar a" failed to @extend ".flex-box".
-The selector ".flex-box" was not found.
-Use "@extend .flex-box !optional" if the extend should be able to fail.
+@charset "UTF-8";
+/* 
+ * leftsidebar 左侧边栏
+ */
+.sidebar-animate, .yue-left-fixed {
+  transition: transform .2s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px); }
 
+.flex-box, .yue-left-navbar a, .yue-nav-item {
+  /* 兼容旧版浏览器 */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  /* 新版浏览器 */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex; }
 
-Backtrace:
-public/sass/LeftNavbar.scss:44
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/extend.rb:65:in `block in check_extends_fired!'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/util/subset_map.rb:105:in `block in each_value'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/util/subset_map.rb:105:in `each'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/util/subset_map.rb:105:in `each_value'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/extend.rb:50:in `check_extends_fired!'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/visitors/extend.rb:16:in `visit'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/root_node.rb:39:in `css_tree'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/engine.rb:295:in `render_with_sourcemap'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:412:in `run'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/sass_scss.rb:63:in `process_result'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:52:in `parse'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/lib/sass/exec/base.rb:19:in `parse!'
-/var/lib/gems/1.9.1/gems/sass-3.4.19/bin/sass:13:in `<top (required)>'
-/usr/local/bin/sass:23:in `load'
-/usr/local/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Sass::SyntaxError: \".yue-left-navbar a\" failed to @extend \".flex-box\".\A The selector \".flex-box\" was not found.\A Use \"@extend .flex-box !optional\" if the extend should be able to fail.\A "; }
+.vertical-center, .yue-left-navbar a {
+  /* 垂直居中 */
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
+
+.yue-left-fixed {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100%; }
+
+.left-navbar-logo {
+  display: none; }
+
+.chevron-left {
+  cursor: pointer; }
+
+/* 隐藏左侧栏 */
+.not-visible {
+  transition: transform .2s;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  -webkit-transform: translateX(-240px);
+  transform: translateX(-240px); }
+
+/* screen width > 768px display */
+.yue-left-navbar {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 64px; }
+  .yue-left-navbar a {
+    width: 100%;
+    padding-left: 15px;
+    line-height: 48px;
+    color: #333;
+    transition: background-color 0.3s cubic-bezier(0, 0, 0.2, 1); }
+    .yue-left-navbar a:visited, .yue-left-navbar a:hover {
+      background-color: #EEE; }
+    .yue-left-navbar a .icon-font {
+      display: inline-block;
+      font-size: 18px; }
+    .yue-left-navbar a .item-content {
+      margin-left: 20px; }
+  .yue-left-navbar .active {
+    color: cornflowerblue;
+    background-color: #EEE; }
+
+.yue-nav-item {
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding-top: 16px; }
+
+@media (max-width: 1280px) {
+  .yue-left-fixed {
+    -webkit-transform: translateX(-240px);
+    transform: translateX(-240px);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+    z-index: 9;
+    background-color: #FFF; }
+
+  .left-navbar-logo {
+    /* 兼容旧版浏览器 */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    /* 新版浏览器 */
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 100%;
+    height: 68px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 16px;
+    font-size: 1.5em;
+    color: #333;
+    border-bottom: 1px solid #ddd; }
+
+  .yue-left-navbar {
+    margin-top: 0; } }
+
+/*# sourceMappingURL=LeftNavbar.css.map */
