@@ -24,17 +24,4 @@ define(["jquery", "slideLeft"], function($, slideLeft) {
 				transform: "translateX(-240px)"
 		});
 	});
-
-	// mouseover avatar show hidden box
-	$('.avatar, .user-car').hover(function() {
-		// console.log(11);
-		$('.user-car').show();
-	}, function() {
-		$('.user-car').hide();
-	});
-	// $('.user-car').hover(function() {
-	// 	$(this).show();
-	// }, function() {
-	// 	$(this).hide();
-	// });
 });
