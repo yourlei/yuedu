@@ -1,0 +1,35 @@
+/* 
+ * base style
+ */
+@import "./variable.scss";
+@import "./mixin.scss";
+
+body { 
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	-webkit-text-align: justify;
+	text-align: justify;
+	-webkit-font-smoothing: antialiased;
+	background-color: $body-bg-color;
+}
+@media only screen and (min-width: 750px) {
+	html, body {
+		font-size:  $font-size-base;
+	}
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	html, body {
+	font-size:  $font-size-small;
+	}
+	h1 {
+		font-size: 32px;
+	}
+}
+ul,li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: $link-normal-color;
+}
+a:hover { text-decoration: none; }
