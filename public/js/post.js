@@ -58,4 +58,11 @@ define(["jquery"], function($) {
     }
     // $('.add-comment').css({marginTop: "-28px"})
   });
+
+  $('.avatar, .user-car').hover(function() {
+    // console.log(11);
+    $('.user-car').show();
+  }, function() {
+    $('.user-car').hide();
+  });
 });

@@ -45,84 +45,19 @@ a:hover {
 /* 
  * 顶部栏样式
  */
-/* Font size */
+/*  op navbar  */
+/*  Font size  */
+/*  line height  */
 /* 
  * header
  */
- /* .header {
- 	position: fixed;
- 	left: 0;
- 	top: 0;
- 	width: 100%;
- 	height: $top-navbar-heigth;
- 	padding: $top-navbar-vertical-padding $top-navbar-horizental-padding;
- 	background-color: cornflowerblue;
- 	z-index: 9;
-
- 	div { height: $top-navbar-div-height; }
-
- 	.title { display: table; }
- }
-.yue-top-bar {
-	margin-left: 0;
-	margin-right: 0;
-}
-.wrap-icon {
-	position: absolute;
-	display: inline-block;
-	width: $top-navbar-lineHeight;
-	height: $top-navbar-lineHeight;
-	margin-left: -10px;
-	cursor: pointer;
-}
-.yue-left-icon {
-	width: $top-navbar-lineHeight;
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-
-	svg {
-		vertical-align: middle;
-
-		path { fill: #FFF; }
-	}
-}
-
-.yue-top-search{
-  line-height: $top-navbar-lineHeight;
-  vertical-align: middle;
-  white-space: nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.clear-padding {
-	padding-left: 0;
-	padding-right: 0;
-}
-.yue-logo-font {
-	position: absolute;
-	display: inline-block;
-	margin-left: 48px;
-
-	a { 
-		color: #FFF;
-		font-size: 2em; 
-	}
-}
-begin width < 480px下，隐藏 logo-font
-@media (max-device-width: 480px), (max-width: 480px) {
-	.yue-logo-font {
-		display: none;
-	}
-}*/
-/* end  */
 /********************************/
 /* 2016-02-24 */
 .no-padding {
   padding-left: 0;
   padding-right: 0; }
 
-.flex-box, .md-layout, .top-nav, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group, .yue-left-navbar a, .yue-nav-item {
+.flex-box, .md-layout, .top-nav, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group, .nav-group .avatar, .nav-group .user-car-top, .yue-left-navbar a, .yue-nav-item {
   /* 兼容旧版浏览器 */
   display: -webkit-box;
   display: -moz-box;
@@ -132,7 +67,7 @@ begin width < 480px下，隐藏 logo-font
   display: -moz-flex;
   display: flex; }
 
-.vertical-center, .md-layout, .drawer-btn, .yue-navbar, .yue-form-search, .yue-left-navbar a {
+.vertical-center, .md-layout, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group .avatar, .nav-group .user-car-top, .yue-left-navbar a {
   /* 垂直居中 */
   -webkit-box-align: center;
   -moz-box-align: center;
@@ -140,7 +75,7 @@ begin width < 480px下，隐藏 logo-font
   -webkit-align-items: center;
   align-items: center; }
 
-.horizontal-center, .drawer-btn {
+.horizontal-center, .drawer-btn, .nav-group .avatar {
   /* 水平居中 */
   /* 兼容旧版浏览器，移动端360浏览器，及UC */
   -webkit-box-pack: center;
@@ -247,6 +182,7 @@ begin width < 480px下，隐藏 logo-font
 
 /* nav group */
 .nav-group {
+  position: relative;
   width: 100%;
   min-height: 48px;
   justify-content: flex-end; }
@@ -256,6 +192,68 @@ begin width < 480px下，隐藏 logo-font
     display: inline-block;
     padding-left: 4px;
     color: #FFF; }
+  .nav-group .avatar {
+    width: 68px;
+    height: 68px;
+    padding-left: 0;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer; }
+    .nav-group .avatar img {
+      width: 58px;
+      height: 58px;
+      border-radius: 48px;
+      border: 2px solid #9853c9; }
+  .nav-group .user-car {
+    position: absolute;
+    top: 68px;
+    right: 0;
+    width: 300px;
+    display: none;
+    padding-top: 10px; }
+    .nav-group .user-car:before {
+      content: '';
+      float: right;
+      width: 0;
+      height: 0;
+      display: inline-block;
+      margin-right: 25px;
+      margin-top: -10px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #6495ED; }
+  .nav-group .user-car-inner {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+  .nav-group .user-car-top {
+    height: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #6495ED; }
+    .nav-group .user-car-top img {
+      width: 68px;
+      height: 68px;
+      border-radius: 68px;
+      border: 2px solid #FFF; }
+    .nav-group .user-car-top .user-meta {
+      padding-left: 15px; }
+    .nav-group .user-car-top .user-post {
+      padding-top: 8px; }
+  .nav-group .user-car-footer {
+    position: relative;
+    height: 70px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #EEE; }
+    .nav-group .user-car-footer a {
+      position: absolute;
+      color: #333; }
+    .nav-group .user-car-footer a:nth-child(1) {
+      bottom: 0; }
+    .nav-group .user-car-footer a:nth-child(2) {
+      right: 15px;
+      bottom: 0; }
+    .nav-group .user-car-footer i {
+      padding-right: 8px; }
 
 @media (max-device-width: 480px), (max-width: 480px) {
   .nav-group {
@@ -270,6 +268,24 @@ begin width < 480px下，隐藏 logo-font
   transform-style: preserve-3d;
   -webkit-transform: translateX(0px);
   transform: translateX(0px); }
+
+.flex-box, .md-layout, .top-nav, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group, .nav-group .avatar, .nav-group .user-car-top, .yue-left-navbar a, .yue-nav-item {
+  /* 兼容旧版浏览器 */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  /* 新版浏览器 */
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex; }
+
+.vertical-center, .md-layout, .drawer-btn, .yue-navbar, .yue-form-search, .nav-group .avatar, .nav-group .user-car-top, .yue-left-navbar a {
+  /* 垂直居中 */
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center; }
 
 .yue-left-fixed {
   position: absolute;
@@ -450,7 +466,7 @@ begin width < 480px下，隐藏 logo-font
     margin-right: -15px;
     margin-left: -15px; }
     .yue-content-post .img-box .img {
-      /* 		left: 0;
+      /* 	left: 0;
       		top: 0;
       		right: 0;
       		bottom:0; */

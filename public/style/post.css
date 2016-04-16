@@ -54,7 +54,7 @@ a {
     font-size: 2em;
     margin-left: 10px; }
 
-  .not-visible {
+  .is-visible {
     display: flex; } }
 .post-logo-font {
   display: inline-block;

@@ -10,13 +10,7 @@
 @import "./LeftNavbar.scss";
 
 /*-------------content----------------*/
-// #main {
-// 	margin-top: 64px;
-// }
 @media only screen and (min-width: 970px) {
-	// #main {
- // 		@include Margin(null, null, null, 210px);
-	// }
 }
 .yue-main-content {
 	position: relative;
@@ -51,13 +45,8 @@
 }
 @media only screen and (max-width: 1280px) {
 	.yue-main-content {
- 		//@include Margin(null, null, null, 210px);
- 		// width: 960px;
- 		// margin: auto;
- 		// left: 100px;
 	  -webkit-transform: translateX(0) !important;
 	  transform: translateX(0) !important;
-
 	}
 }
 @media only screen and (max-width: 750px) {
@@ -65,12 +54,6 @@
  		margin: 0 auto !important;
 	}
 }
-// @media only screen and (min-device-width: 320px) and (max-width: 480px) {
-// 	.yue-main-content {
-//  		@include Margin(null, null, null, 80px);
-// 	}
-// }
-// post article
 .yue-content-post {
 	max-width: 530px;
 	min-width: 280px;
@@ -138,7 +121,7 @@
 		@include Margin(null, -15px, null, -15px);
 
 		.img {
-	/* 		left: 0;
+	/* 	left: 0;
 			top: 0;
 			right: 0;
 			bottom:0; */

@@ -2,77 +2,12 @@
 /* 
  * 顶部栏样式
  */
-/* Font size */
+/*  op navbar  */
+/*  Font size  */
+/*  line height  */
 /* 
  * header
  */
- /* .header {
- 	position: fixed;
- 	left: 0;
- 	top: 0;
- 	width: 100%;
- 	height: $top-navbar-heigth;
- 	padding: $top-navbar-vertical-padding $top-navbar-horizental-padding;
- 	background-color: cornflowerblue;
- 	z-index: 9;
-
- 	div { height: $top-navbar-div-height; }
-
- 	.title { display: table; }
- }
-.yue-top-bar {
-	margin-left: 0;
-	margin-right: 0;
-}
-.wrap-icon {
-	position: absolute;
-	display: inline-block;
-	width: $top-navbar-lineHeight;
-	height: $top-navbar-lineHeight;
-	margin-left: -10px;
-	cursor: pointer;
-}
-.yue-left-icon {
-	width: $top-navbar-lineHeight;
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-
-	svg {
-		vertical-align: middle;
-
-		path { fill: #FFF; }
-	}
-}
-
-.yue-top-search{
-  line-height: $top-navbar-lineHeight;
-  vertical-align: middle;
-  white-space: nowrap;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.clear-padding {
-	padding-left: 0;
-	padding-right: 0;
-}
-.yue-logo-font {
-	position: absolute;
-	display: inline-block;
-	margin-left: 48px;
-
-	a { 
-		color: #FFF;
-		font-size: 2em; 
-	}
-}
-begin width < 480px下，隐藏 logo-font
-@media (max-device-width: 480px), (max-width: 480px) {
-	.yue-logo-font {
-		display: none;
-	}
-}*/
-/* end  */
 /********************************/
 /* 2016-02-24 */
 .no-padding {
