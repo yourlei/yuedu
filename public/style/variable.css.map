@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA;;;GAGG;AACH,eAAe;AAMf,uBAAuB;AAEvB,qBAAqB;AAMrB,gBAAgB;AAIhB,qBAAqB",
-"sources": ["../sass/variable.scss"],
-"names": [],
-"file": "variable.css"
-}
