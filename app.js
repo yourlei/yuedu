@@ -11,7 +11,7 @@ var express = require('express'),
 		app = express(),
 		db = mongoose.connection;
 
-mongoose.connect('mongodb://127.0.0.1:27017/yuedu');
+mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 db.once('open', function() {
 	console.log('mongodb succefully connect.')

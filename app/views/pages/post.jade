@@ -8,34 +8,32 @@ html(lang="zh-CN")
 		link(href = '/style/TopNavbar.css', rel='stylesheet')
 		link(href = '/style/post.css', rel='stylesheet')
 	body
+		// top header 
 		.container.top-nav.header
 			.col-xs-10.col-sm-10.col-md-10.md-layout.no-padding
 				.drawer-btn
 					svg(width="24px" height="24px" viewBox="0 0 48 48")
 									path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
 				.yue-navbar
-					span.yue-logo-title 悦读
-					//form(action="post").yue-form-search
-						span.glyphicon.glyphicon-search.search-icon
-						input(type="search", placeholder='搜索')
+					a(href='/')
+						span.yue-logo-title 悦读
 			.col-xs-2.col-sm-2.col-md-2.md-layout.no-padding
 				nav.nav-group
 					if user
 						li.flex-box.vertical-center
-							//a 欢迎 #{user.name}
-							a.avatar
-								img(src="/images/avatar.jpeg")
+							a(href="/userhome/#{user._id}").avatar
+								img(src="#{user.avatar}")
 						li.user-car
 							.user-car-inner
 								.user-car-top
-									a(href="" target="")
-										img(src="/images/avatar.jpeg")
+									a(href="/userhome/#{user._id}" target="")
+										img(src="#{user.avatar}")
 									.user-meta
-										a(href="" target="")
+										a(href="/userhome/#{user._id}" target="")
 											span.user-name #{user.name}
-										br
-										a(href="" target="").user-post
-											span 文章数  10
+										//br
+										//a(href="" target="").user-post
+											span 文章数 #{user.wirteCount}
 								.user-car-footer
 									a(href="/write" target="_self") 
 										i.glyphicon.glyphicon-pencil
@@ -48,54 +46,44 @@ html(lang="zh-CN")
 							a#register(href="/signup" target="_blank") 注册
 						li.flex-box.vertical-center
 							a#login(href="/signin" target="_blank") 登录 
+		// content
 		.container.article-wrap
 			header.row.author-info
 				section.col-md-2.col-xs-2
-					a(href="#").avatar
-						img(src="/images/avatar.jpeg")
+					a(href="/userhome/#{author._id}" target='_blank').avatar
+						img(src="#{author.avatar}")
 				section.col-md-8.col-xs-8.about
-					h3.author 小悦
+					//h3.author 小悦
+					h3.author #{author.name}
 					p 天马行空无逻辑，温柔而孤独，懒散又认真.
 				section.col-md-2.col-xs-2.follow
 					a(href="")
 						span.glyphicon.glyphicon-plus.add-icon
 						span 关注
-			h1.title 2015，我读过的那些书
+			h1.title #{article.title}
 			.meta-article
-				a(href="").author-name
+				//a(href="").author-name
 					span 小悦
 				span.meta-item.readed
 					span.glyphicon.glyphicon-eye-open.meta-icon
 					span 阅读
-					span.all-num 2999
+					span.all-num #{article.pv}
 				span.meta-item.collection
 					span.glyphicon.glyphicon-star.meta-icon
 					span 收藏
 					span.all-num 200
-				span.meta-item.comment
+				span.meta-item
 					span.glyphicon.glyphicon-comment.meta-icon
 					span 评论
-					span.all-num 199
+					span.all-num #{comments.length}
 				span.meta-item
 					span.glyphicon.glyphicon-time.meta-icon
-					span 2015-12-31
+					span #{moment(article.meta.createdAt).format('YYYY-MMM-DD, h:mm:ss a')}
 			.show-content
 				.img
 					img(src="/images/post-cover.jpg")
-				article
-					p 爱好不多，除了篮球就是读书，这不快年底了，总结下今年读过的一些好书
-
-					h3 个人爱好
-					p 《亲爱的安德烈》安德烈十四岁的时候，龙应台离开欧洲，返回台湾，就任台北市首任文化局长。等她卸任回到儿子身边，安德烈已是一个一百八十四公分高的十八岁的小伙子，坐在桌子另一边，有一点“冷”地看着妈妈。
-
-					p 他们是两代人，年龄相差三十年；他们也是两国人，中间横着东西文化。失去小男孩安安没关系，但龙应台一定要认识成熟的大学生安德烈。
-					p 于是，母子俩用了三年时间互相通信。龙应台“认识了人生里第一个十八岁的人”，安德烈“也第一次认识了自己的母亲”。
-					p 收入此书的的三十多封书信，感动了无数被“亲子”之间隔阂与冲突深深困扰着的读者，为读者弭平代沟、跨越文化阻隔、两代人沟通交流带来了全新的思维和方法
-
-					h3 《教父》
-					p 我是先看的电影再看的书，书比电影的细节更多，印象最深的是那句话：“A man that doesn't spend time with his family can never be a real man.” 男人要以家庭为重。
-					h3 《投资最重要的事》
-					p 今年前半年看的，但是我没有太多钱可以理啊，还是先学会记账吧，最近使用挖财APP来记账，非常简单。
+				article#text
+					!{article.html}
 				.meta-bottom
 					.col-md-8
 						.share-link
@@ -107,31 +95,60 @@ html(lang="zh-CN")
 							span.glyphicon.glyphicon-star
 							span  收藏
 			.comment
-				.comment-head
-					.hide-area
-						.comment-area
-							textarea.commet-text
-							input.btn.btn-primary.comment-btn(type="submit" value="发表")
-					span.add-comment
-						span.glyphicon.glyphicon-pencil
-						span 添加评论
 				.comment-content
 					.comment-item
-						.commenter-info
-							a(href="").user-logo
-								img(src="/images/avatar.jpeg")
-							a(href="").commenter-name 那年仲夏
-						.content
-							p 我老师也喜欢看书，到他的书从不再借，谁看可以去他家看,不可以带走
-						.comment-footer.text-right
-							span
-								span.comment-time 2015-12-31 23:42
-							a(href="")
-								span.glyphicon.glyphicon-heart.icon-font
-								span.good 赞
-							a(href="")
-								span.respond 回复
+						each item in comments
+							.commenter-info
+								a(href="").user-logo
+									img(src="#{item.from.avatar}")
+								a(href="") #{item.from.name}
+							.content
+								p #{item.content}
+							.comment-footer.text-right
+								span
+									span.comment-time #{moment(item.meta.createAt).format('YYYY-MMM-DD HH:mm:ss')}
+								a(href="")
+									span.glyphicon.glyphicon-heart.icon-font
+									span.good 赞
+								a.reply-comment(href="#comments", data-cid="#{item._id}", data-tid="#{item.from._id}")
+									span.respond 回复
+							hr
+							if item.reply && item.reply.length > 0
+								each reply in item.reply
+									.reply-container
+										.commenter-info
+											//a(href="").user-logo
+												img(src="#{reply.from.avatar}")
+											a(href="/userhome/#{reply.from.id}" target="_blank").commenter-name #{reply.from.name}: 
+											a(href="/userhome/#{reply.to.id}" target="_blank").commenter-name @#{reply.to.name}
+										.content
+											p #{reply.content}
+										.comment-footer.text-right
+											span
+												span.comment-time 2015-12-31 23:42
+											a(href="")
+												span.glyphicon.glyphicon-heart.icon-font
+												span.good 赞
+											//a.reply-comment(href="#comments", data-cid="#{item._id}", data-tid="#{item.from._id}")
+												span.respond 回复
+									hr
+				#comments
+					.comment-head
+						.hide-area
+							form#commentForm(method="POST", action="/user/comment")
+								input(type="hidden",name="comment[article]",value="#{article._id}")
+								if user
+									input(type="hidden", name="comment[from]", value="#{user._id}")
+								.form-group
+									textarea(name="comment[content]").commet-text
+								if user
+									input.btn.btn-primary.comment-btn(type="submit" value="发表")
+								else
+									a.navbar-link(href="/signin", data-toggle="modal", data-target="#signinModal") 登录后评论
+						span.add-comment
+							span.glyphicon.glyphicon-pencil
+							span 添加评论
 	script(src='/libs/requirejs/require.min.js' defer async="true")
 	script(src='/libs/requirejs/require.min.js' data-main='/js/post')
-
+	scruot(src='/libs/jquery/dist/jquery.min.js')
 

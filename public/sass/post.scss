@@ -185,6 +185,7 @@ a {
 }
 .comment-head {
 	position: relative;
+	margin-top: 15px;
 }
 .hide-area {
 	display: none;
@@ -222,8 +223,12 @@ a {
 }
 .comment-item {
 	padding: 15px 0;
-	border-bottom: 1px solid #E5E5E5;
+	//border-bottom: 1px solid #E5E5E5;
 	
+	.media {
+		border-left: 2px solid #ccc;
+		padding-left: 5px;
+	}
 	.commenter-info {
 		margin-bottom: 15px;
 	}
@@ -251,9 +256,10 @@ a {
 	-webkit-text-align: justify;
 	text-align: justify;
 	word-break: break-all;
+	padding-left: 15px;
 }
 .comment-footer {
-	
+	font-size: 12px;
 	a {
 		color: #999;
 		padding-left: 15px;
@@ -269,5 +275,15 @@ a {
 	.icon-font {
 		font-size: 12px;
 		padding-right: 2px;
+	}
+}
+.reply-container {
+	padding-left: 15px;
+
+	.commenter-name {
+		color: cornflowerblue;
+		&:hover {
+			color: #333;
+		}
 	}
 }

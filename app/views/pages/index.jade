@@ -10,110 +10,27 @@ block content
 						.col-md-6.col-lg-6
 							.yue-content-post
 								.user-info
-									a(href="#" target="_blank")
-										span.glyphicon.glyphicon-user.user-logo
-										span.user-name #{item.author}
-									span.post-time 9小时前
+									a(href="/userhome/#{item.author._id}" target="_blank")
+										//span.glyphicon.glyphicon-user.user-logo
+										img(src='#{item.author.avatar}').user-logo
+										span.user-name #{item.author.name}
+									span.post-time #{moment(item.meta.createdAt).startOf('hour').fromNow()}
 								.article-title
-									a(href="/post" target="_blank") #{item.title}
+									a(href="/post/#{item._id}" target="_blank") #{item.title}
 								a.img-box(href="")
-									img.img(src="#{item.cover}")
+									//img.img(src="#{item.cover}")
+									img.img(src="/images/post-img-1.jpg")
 								.post-footer
 									a(href="") 
 										span 阅读
-										span (229)
+										span (#{item.pv})
 									a(href="") 
 										span 评论
-										span (99)
+										span (#{item.commentCount})
 									a(href="") 
 										span 分享
 									a(href="") 
 										span.glyphicon.glyphicon-heart.icon-heart
-						//-.yue-content-post
-							.user-info
-								a(href="#" target="_blank")
-									span.glyphicon.glyphicon-user.user-logo
-									span.user-name Leiyu
-								span.post-time 9小时前
-							.article-title
-								a(href="/post" target="_blank") 10本文艺美学书教你更有质感的生活
-							a.img-box(href="")
-								img.img(src="/images/post-img-4.webp")
-							.post-footer
-								a(href="") 
-									span 阅读
-									span (229)
-								a(href="") 
-									span 评论
-									span (99)
-								a(href="") 
-									span 分享
-								a(href="") 
-									span.glyphicon.glyphicon-heart.icon-heart
-						//-.yue-content-post
-							.user-info
-								a(href="#" target="_blank")
-									span.glyphicon.glyphicon-user.user-logo
-									span.user-name Leiyu
-								span.post-time 9小时前
-							.article-title
-								a(href="/post" target="_blank") 有了这10款逆天级效率工具，每天提前下班2小时!#DEMO8年度产品盘点#
-							a.img-box(href="")
-								img.img(src="/images/post-img-3.webp")
-							.post-footer
-								a(href="") 
-									span 阅读
-									span (229)
-								a(href="") 
-									span 评论
-									span (99)
-								a(href="") 
-									span 分享
-								a(href="") 
-									span.glyphicon.glyphicon-heart.icon-heart
-					//-.col-md-6.col-lg-6
-						.yue-content-post
-							.user-info
-								a(href="#" target="_blank")
-									span.glyphicon.glyphicon-user.user-logo
-									span.user-name Leiyu
-								span.post-time 9小时前
-							.article-title
-								a(href="/post" target="_blank") 2015-私人阅读十佳书目
-							a.img-box(href="")
-								img.img(src="/images/post-img-2.png")
-							.post-footer
-								a(href="") 
-									span 阅读
-									span (229)
-								a(href="") 
-									span 评论
-									span (99)
-								a(href="") 
-									span 分享
-								a(href="") 
-									span.glyphicon.glyphicon-heart.icon-heart
-						//-.yue-content-post
-							.user-info
-								a(href="#" target="_blank")
-									span.glyphicon.glyphicon-user.user-logo
-									span.user-name Leiyu
-								span.post-time 9小时前
-							.article-title
-								a(href="/post" target="_blank") Are your ready?
-							a.img-box(href="")
-								img.img(src="/images/post-img-5.webp")
-							.post-footer
-								a(href="") 
-									span 阅读
-									span (229)
-								a(href="") 
-									span 评论
-									span (99)
-								a(href="") 
-									span 分享
-								a(href="") 
-									span.glyphicon.glyphicon-heart.icon-heart
 			.fixed-icon-pen
 				a(href="/write")
 					span.glyphicon.glyphicon-pencil.icon-pen

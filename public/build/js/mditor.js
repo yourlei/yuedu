@@ -843,7 +843,8 @@ Mditor.prototype.setValue = function (value) {
 Mditor.prototype.getHTML = function () {
 	var self = this;
 	var value = self.parser.parse(self.ui.editor.val());
-	return '<div class="markdown-body">' + value + '</div>';
+	return '<div class="markdown-body">' + 
+					value + '</div>' + '<textarea class="nodisplay" name="article[html]">' + value + '</textarea>';
 };
 
 /**

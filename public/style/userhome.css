@@ -53,19 +53,73 @@ a {
     line-height: 35px; }
 
 .main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding-top: 25px;
   border-top: 1px solid #666; }
   .main .post-item {
     display: flex;
-    width: 220px;
+    width: 248px;
     height: 326px;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
     overflow: hidden; }
   .main .wrap {
-    width: 220px;
+    width: 248px;
     height: 220px;
     overflow: hidden; }
-  .main img {
-    width: 220px;
-    height: 100%; }
+  .main .text {
+    height: 96px;
+    line-height: 24px;
+    padding: 10px 16px 0;
+    word-wrap: break-word; }
+  .main .img a:hover .hoverlayer {
+    top: 14px; }
+
+.hoverwrap {
+  position: relative;
+  diplay: block;
+  width: 248px;
+  height: 220px;
+  overflow: hidden; }
+  .hoverwrap span img {
+    width: auto;
+    height: 220px; }
+  .hoverwrap span {
+    display: block; }
+  .hoverwrap .hoverlayer {
+    position: absolute;
+    top: -220px;
+    left: 0;
+    width: 248px;
+    height: 220px;
+    text-align: center;
+    color: #FFF;
+    transition: top .5s ease 0s;
+    z-index: 5; }
+  .hoverwrap .hoverbg {
+    width: 248px;
+    height: 220px;
+    background-color: #000;
+    opacity: 0.3; }
+  .hoverwrap .info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 248px;
+    height: 220px; }
+  .hoverwrap .date {
+    margin: 64px auto 24px;
+    font-size: 30px; }
+
+.article-info {
+  padding-top: 5px;
+  text-align: right;
+  font-size: 12px;
+  border-top: 1px dotted #666; }
+  .article-info .group {
+    margin-right: 6px; }
 
 /*# sourceMappingURL=userhome.css.map */

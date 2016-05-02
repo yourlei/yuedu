@@ -189,7 +189,8 @@ a {
   border-top: 1px solid #FFCBCB; }
 
 .comment-head {
-  position: relative; }
+  position: relative;
+  margin-top: 15px; }
 
 .hide-area {
   display: none; }
@@ -222,8 +223,10 @@ a {
     color: #333; }
 
 .comment-item {
-  padding: 15px 0;
-  border-bottom: 1px solid #E5E5E5; }
+  padding: 15px 0; }
+  .comment-item .media {
+    border-left: 2px solid #ccc;
+    padding-left: 5px; }
   .comment-item .commenter-info {
     margin-bottom: 15px; }
   .comment-item .user-logo {
@@ -244,18 +247,28 @@ a {
 .content p {
   -webkit-text-align: justify;
   text-align: justify;
-  word-break: break-all; }
+  word-break: break-all;
+  padding-left: 15px; }
 
-.comment-footer a {
-  color: #999;
-  padding-left: 15px;
-  transition: all 0.5s; }
-  .comment-footer a:hover {
-    color: #333; }
-.comment-footer .comment-time {
-  color: #999; }
-.comment-footer .icon-font {
-  font-size: 12px;
-  padding-right: 2px; }
+.comment-footer {
+  font-size: 12px; }
+  .comment-footer a {
+    color: #999;
+    padding-left: 15px;
+    transition: all 0.5s; }
+    .comment-footer a:hover {
+      color: #333; }
+  .comment-footer .comment-time {
+    color: #999; }
+  .comment-footer .icon-font {
+    font-size: 12px;
+    padding-right: 2px; }
+
+.reply-container {
+  padding-left: 15px; }
+  .reply-container .commenter-name {
+    color: cornflowerblue; }
+    .reply-container .commenter-name:hover {
+      color: #333; }
 
 /*# sourceMappingURL=post.css.map */

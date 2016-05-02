@@ -1,0 +1,34 @@
+doctype
+html(lang="zh-CN")
+	head
+		meta(charset = "utf-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title #{title}
+		link(href = '/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+		link(href = '/style/TopNavbar.css', rel='stylesheet')
+		link(href = '/style/results.css', rel='stylesheet')
+block content
+	include ../includes/topbar
+	.container.main
+		if articles.length > 0
+			each item in articles
+				.result-item
+					//a
+						img.img(src="/images/post-img-1.jpg")
+					h2
+						a(href='/post/#{item._id}') #{item.title}
+					section
+						p !{item.html}
+					.article-info
+						a(href="/post/#{item._id}")
+							span 作者-
+							span #{item.author.name}
+						a(href="/post/#{item._id}") 
+							span 阅读
+							span (#{item.pv})
+						a(href="/post/#{item._id}") 
+							span 评论
+							span (#{item.commentCount})
+					hr
+		else
+			h2 未找到相关内容

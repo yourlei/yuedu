@@ -5,27 +5,26 @@
 							path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
 		.yue-navbar
 			span.yue-logo-title 悦读
-			form(action="post").yue-form-search
+			form(method='GET' action='/results' target='_blank').yue-form-search
 				span.glyphicon.glyphicon-search.search-icon
-				input(type="search", placeholder='搜索')
+				input(type="search", placeholder='搜索', name='q')
 	.col-xs-2.col-sm-2.col-md-2.md-layout.no-padding
 		nav.nav-group
 			if user
 				li.flex-box.vertical-center
-					//a 欢迎 #{user.name}
-					a.avatar
-						img(src="/images/avatar.jpeg")
+					a(href="/userhome/#{user._id}").avatar
+						img(src="#{user.avatar}")
 				li.user-car
 					.user-car-inner
 						.user-car-top
 							a(href="" target="")
-								img(src="/images/avatar.jpeg")
+								img(src="#{user.avatar}")
 							.user-meta
 								a(href="" target="")
 									span.user-name #{user.name}
 								br
 								a(href="" target="").user-post
-									span 文章数  10
+									span 文章数  #{writeCount}
 						.user-car-footer
 							a(href="/write" target="_self") 
 								i.glyphicon.glyphicon-pencil

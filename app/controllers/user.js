@@ -1,5 +1,5 @@
 var User = require('../models/user');
-
+var Article = require('../models/article');
 // signup
 exports.getSignup = function (req, res) {
 	res.render('signup', {
@@ -20,7 +20,6 @@ exports.userList = function(req, res) {
 		{
 			console.log(err);
 		}
-		// console.log(movies.n);
 		res.render('userlist', {
 			'title': '用户列表页',
 			users: users
@@ -49,32 +48,36 @@ exports.signup = function(req, res) {
 	// 其他获取参数的方法
 	// req.query('user')
 	// req.params('user')
-
-	User.findOne({name: _user.name}, function(err, user) {
-		if(err)
-		{
-			console.log(err);
-		}
-		// user 已存在
-		if(user) {
-			console.log('该用户已注册．');
-			res.redirect('/signup');
-		}
-		else {
-			var new_user = new User(_user);
-			
-			// console.log(user);
-			// 密码未加密
-
-			new_user.save(function(err, user) {
-				if (err) {
-					console.log(err);
-				}
+  if(_user.name && _user.email && _user.password)
+  {
+		User.findOne({name: _user.name}, function(err, user) {
+			if(err)
+			{
+				console.log(err);
+			}
+			// user 已存在
+			if(user) {
+				console.log('该用户已注册．');
+				res.redirect('/signup');
+			}
+			else {
+				var new_user = new User(_user);
+				
 				// console.log(user);
-				res.redirect('/signin');
-			});
-		}
-	});
+				// 密码未加密
+				new_user.save(function(err, user) {
+					if (err) {
+						console.log(err);
+					}
+					res.redirect('/signin');
+				});
+			}
+		});
+  }
+  else
+  {
+  	res.redirect('/signup');
+  }
 };
 // signin 登录页面
 exports.signin = function(req, res) {
@@ -114,42 +117,17 @@ exports.logout = function(req, res) {
 	//delete app.locals.user;
 
 	return res.redirect('/');
-	/*res.render('index', {
-		title: '悦读',
-		articles: [{
-			_id: 1,
-			title: '2015-我读过的那些书',
-			author: 'leiyu',
-			cover: '/images/post-img-1.jpg'
-		},
-		{
-			_id: 1,
-			title: '2015-我读过的那些书',
-			author: 'leiyu',
-			cover: '/images/post-img-1.jpg'
-		},
-		{
-			_id: 1,
-			title: '2015-我读过的那些书',
-			author: 'leiyu',
-			cover: '/images/post-img-1.jpg'
-		},
-		{
-			_id: 1,
-			title: '2015-我读过的那些书',
-			author: 'leiyu',
-			cover: '/images/post-img-1.jpg'
-		},
-		{
-			_id: 1,
-			title: '2015-我读过的那些书',
-			author: 'leiyu',
-			cover: '/images/post-img-1.jpg'
-		}]
-	});*/
 };
 exports.userHome = function(req, res) {
-	res.render('userHome',{
-		'title': 'my home'
+	var id = req.params.id;
+
+	User.findById(id, function (err, user) {
+		Article.find({author: id}, function (err, result) {
+			res.render('userHome',{
+				'title': user.name,
+				'user': user,
+				'result': result
+			});	
+		});
 	});
 };

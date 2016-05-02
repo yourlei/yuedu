@@ -6,11 +6,12 @@ html(lang="zh-CN")
 		title #{title}
 		link(href = '/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
 		link(href = '/style/login.css', rel='stylesheet')
+		script(src="/libs/jquery/dist/jquery.min.js")
 	body
 		.container.login-content
 			h1.logo-font 悦读
 			h4.subtitle 分享您的故事，让世界听见您的声音
-			form(method="POST", action="/signup").form-horizontal.login-form
+			form(method="POST", action="/signup", onsubmit="return valid();").form-horizontal.login-form
 					.form-group
 						span.glyphicon.glyphicon-envelope.login-form-icon
 						input(type="email" name="user[email]" placeholder="您的邮箱地址").form-control
@@ -22,5 +23,5 @@ html(lang="zh-CN")
 						input(type="password" name="user[password]" placeholder="不少于６位的密码").form-control
 					.form-group
 						button(type="submit").btn.btn-lg.btn-primary#login-btn 注册
-	script(src='/libs/requirejs/require.min.js' defer async="true")
-	//-script(src='/libs/requirejs/require.min.js' data-main='/js/login')
+	//script(src='/libs/requirejs/require.min.js' defer async="true")
+	script(src='/libs/requirejs/require.min.js' data-main='/js/signup')

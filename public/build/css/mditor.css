@@ -3117,3 +3117,4 @@ body {
 .mditor.toolbar-hidden .viewer {
 	border-radius: 3px;
 }
+.nodisplay {display: none;}

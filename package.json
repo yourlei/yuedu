@@ -43,5 +43,8 @@
   "bugs": {
     "url": "https://github.com/yourlei/yuedu/issues"
   },
-  "homepage": "https://github.com/yourlei/yuedu#readme"
+  "homepage": "https://github.com/yourlei/yuedu#readme",
+  "devDependencies": {
+    "marked": "^0.3.5"
+  }
 }

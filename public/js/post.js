@@ -9,8 +9,7 @@ require.config({
 	}
 });
 // define main
-define(["jquery"], function($) {
-	// scroll(function(direction) { console.log(direction) });    
+define(["jquery"], function($) {  
 	function scroll() {
     var win = $(window),
         beforeScrollTop = win.scrollTop();
@@ -23,17 +22,13 @@ define(["jquery"], function($) {
       	return false;
       } 
       beforeScrollTop = afterScrollTop;
-
       if(delta > 0)
       {
       	$(".header").slideUp(); 
-        // $(".header").animate({position: "fixed", top: "-64px"});
       }
       else {
       	$(".header").slideDown();
-         // $(".header").animate({position: "fixed", top: "0px"});
       }
-
       // console.log(delta)
     });
 	}
@@ -41,11 +36,10 @@ define(["jquery"], function($) {
 
   // comment button evetn
   var flag = 1;
-  $(".add-comment").on('click', function(e) {
+  $(".add-comment, .reply-comment").on('click', function(e) {
     var hideArea = $('.hide-area');
 
     hideArea.toggle('slow');
-    // alert(hideArea.css('display'))
     if(flag)
     {
       $('.add-comment').css({marginTop: "-28px"});
@@ -56,13 +50,43 @@ define(["jquery"], function($) {
       $('.add-comment').css({marginTop: "0"});
       flag = 1;
     }
-    // $('.add-comment').css({marginTop: "-28px"})
   });
 
-  $('.avatar, .user-car').hover(function() {
-    // console.log(11);
+  $('nav .avatar, .user-car').hover(function() {
     $('.user-car').show();
   }, function() {
     $('.user-car').hide();
   });
+
+  // add reply comments
+  $('.reply-comment').click(function(e) {
+    var target = $(this);
+    var toId = target.data('tid');
+    var commentId = target.data('cid');
+
+    // if ($('#toId').length > 0) {
+    //   $('#toId').val(toId)
+    // }
+    // else {
+      $('<input>').attr({
+        type: 'hidden',
+        id: 'toId',
+        name: 'comment[tid]',
+        value: toId
+      }).appendTo('#commentForm');
+    // }
+
+    // if ($('#commentId').length > 0) {
+    //   $('#commentId').val(commentId)
+    // }
+    // else {
+      $('<input>').attr({
+        type: 'hidden',
+        id: 'commentId',
+        name: 'comment[cid]',
+        value: commentId
+      }).appendTo('#commentForm');
+    // }
+  });
+
 });

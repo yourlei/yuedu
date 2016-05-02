@@ -1,4 +1,6 @@
 var Article = require('../models/article');
+var Comment = require('../models/comment');
+var User = require('../models/user');
 
 // editArticle
 exports.editArticle = function (req, res) {
@@ -7,11 +9,16 @@ exports.editArticle = function (req, res) {
 	});
 };
 
-// signup 提交用户注册数据
+// public article
 exports.postArticle = function(req, res) {
 	var _article = req.body.article;
 
-	console.log(_article);
+	// console.log(_article);
+  User.update({_id: _article.author}, {$inc: {writeCount: 1}}, function(err) {
+   if (err) {
+     console.log(err);
+   }
+  });
 
 	var new_article = new Article(_article);
 
@@ -22,35 +29,46 @@ exports.postArticle = function(req, res) {
 		// console.log(user);
 		res.redirect('/');
 	});
+};
+exports.detail = function (req, res) {
+	var id = req.params.id;
 
-	// res.redirect('/');
-	// 其他获取参数的方法
-	// req.query('user')
-	// req.params('user')
+	Article.update({_id: id}, {$inc: {pv: 1}}, function(err) {
+	   if (err) {
+	     console.log(err);
+	   }
+	 });
 
-	/*User.findOne({name: _user.name}, function(err, user) {
-		if(err)
-		{
+	// if (req.session.user) {
+	// 	var userId = req.session.user._id,
+	// 		  writeCount;		
+	// 	Article.find({author: userId}, function(err, result) {
+	// 		writeCount = result.length;
+	// 	})
+	// }
+
+	Article.findById(id, function(err, article) {
+		if (err) {
 			console.log(err);
 		}
-		// user 已存在
-		if(user) {
-			console.log('该用户已注册．');
-			res.redirect('/signup');
-		}
-		else {
-			var new_user = new User(_user);
-			
-			// console.log(user);
-			// 密码未加密
+		var articleId = article.author;
 
-			new_user.save(function(err, user) {
-				if (err) {
-					console.log(err);
-				}
-				// console.log(user);
-				res.redirect('/signin');
-			});
-		}
-	});*/
+		User.findById(articleId, function(err, user) {
+			// console.log('usr: ' + user);
+			Comment
+						.find({article: id})
+						.populate('from', 'name avatar')
+						.populate('reply.from reply.to', 'name avatar')
+						.exec(function(err, comments) {
+							console.log(comments);
+							res.render('post', {
+								title: article.title,
+								author: user,
+								// writeCount: writeCount,
+								article: article,
+								comments: comments
+							});
+						});
+		});
+	});
 };

@@ -2,6 +2,7 @@ var User = require('../app/models/user');
 var Index = require('../app/controllers/index');
 var UserRouter = require('../app/controllers/user');
 var Article = require('../app/controllers/article');
+var Comment = require('../app/controllers/comment');
 
 module.exports = function(app) {
 	app.use(function(req, res, next) {
@@ -32,16 +33,12 @@ module.exports = function(app) {
 	// 登出页面
 	app.get('/logout', UserRouter.logout);
 
-	app.get('/userhome', UserRouter.userHome);
+	app.get('/userhome/:id', UserRouter.userHome);
 
 	// ----------------------------------
 
 	// 详情页
-	app.get('/post', function (req, res) {
-		res.render('post', {
-			title: 'article'
-		});
-	});
+	app.get('/post/:id', Article.detail);
 
 	// markdown书写写面
 	app.get('/write', UserRouter.userRequire, Article.editArticle);
@@ -52,4 +49,10 @@ module.exports = function(app) {
 			title: 'admin page'
 		});
 	});
+
+	// comment
+	app.post('/user/comment', UserRouter.userRequire, Comment.save);
+
+	app.get('/results', Index.search);
+	//app.post('/', Article.search);
 };

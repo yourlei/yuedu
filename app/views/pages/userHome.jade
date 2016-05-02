@@ -18,19 +18,35 @@ html(lang="zh-CN")
 				.side
 					li.side-top
 						a.avatar
-							img(src="/images/avatar.jpeg")
+							img(src="#{user.avatar}")
 						.user-info
 							span #{user.name}
+							h6 天马行空无逻辑，温柔而孤独，懒散又认真.
 					li.user-data
 						span  写了10000字
-						span 文章 10
+						span 文章 #{user.writeCount}
 						span 收藏 9
 			.col-md-9
 				.main
-					.post-item
-						.content
-							.wrap
-								.img
-									a
-										img(src="/images/post-img-1.jpg")
-							.text
+					each item in result
+						.post-item
+							.content
+								.wrap
+									.img
+										a(href='/post/#{item._id}')
+											span.hoverwrap
+												span.hoverlayer
+													span.hoverbg
+													span.info 
+														span.date #{moment(item.meta.createAt).format('YYYY-MM-DD')}
+												span
+													img(src="/images/post-img-1.jpg")
+								.text
+									h5 #{item.title}
+									.article-info
+										span.group
+											span.glyphicon.glyphicon-eye-open
+											span&nbsp 阅读 #{item.pv}
+										span.group
+											span.glyphicon.glyphicon-comment
+											span&nbsp 评论 #{item.commentCount}

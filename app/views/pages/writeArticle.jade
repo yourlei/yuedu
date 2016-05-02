@@ -10,24 +10,21 @@ html(lang="zh-CN")
 		span.meta-btn
 			i.fa.fa-reorder
 		form(method="POST" action="")
-			//.btn-line
+			if user
+				input(type="hidden", name="article[author]", value="#{user._id}")
 			input(type="text" name="article[title]" placeholder="").title
 			textarea(name="article[content]" id="editor")
-			//.btn-line
-				button(type='submit').btn-primary 发布
 		.fix-bar
 			ul.nav-bar
 				li.logo
-					a(href="/") 
-						//img(src="/images/avatar.jpeg")
-						悦读
+					a(href="/") 悦读
 				li.item
 					a(href="").active
 						i.fa.fa-pencil.icon-font
 						span.hidden-box
 							i.hidden 写文章
 				li.item 
-					a(href="")
+					a(href="/userhome/#{user._id}" target='_blank')
 						i.fa.fa-home.icon-font
 						span.hidden-box
 							i.hidden 我的主页
@@ -37,7 +34,7 @@ html(lang="zh-CN")
 						span.hidden-box
 							i.hidden 收藏夹
 				li.item 
-					a(href="")
+					a(href="/logout")
 						i.fa.fa-sign-out.icon-font
 						span.hidden-box
 							i.hidden 登出
@@ -45,4 +42,3 @@ html(lang="zh-CN")
 	script(src='/build/js/mditor.js')
 	script(src='/libs/jquery/dist/jquery.min.js')
 	script(src='/js/mditor.js')
-

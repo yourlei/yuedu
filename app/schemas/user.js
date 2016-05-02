@@ -14,6 +14,14 @@ var UserSchema = new mongoose.Schema({
 		type: Number,
 		default: 0
 	},
+	avatar: {
+		type: String,
+		default:'/images/avatar.jpg',
+	},
+	writeCount: {
+		type: Number,
+		default: 0
+	},
 	meta: {
 		createAt: {
 			type: Date,
@@ -45,16 +53,16 @@ UserSchema.pre('save', function(next) {
 			return next(err);
 		}
 		/*
-		bcrypt.hash(passwd, salt, function(err, hash){
-			if(err)
-			{
-				return next(err);
-			}
+			bcrypt.hash(passwd, salt, function(err, hash){
+				if(err)
+				{
+					return next(err);
+				}
 
-			_user.password = hash;
-			// console.log(_user.password);
-			next();
-		});
+				_user.password = hash;
+				// console.log(_user.password);
+				next();
+			});
 		*/
 		bcrypt.hash(_user.password, null, null, function (err, hash){
 				if (err) {
@@ -73,7 +81,7 @@ UserSchema.methods = {
       if (err) return cb(err);
 
       cb(null, isMatch);
-      console.log(isMatch);
+     // console.log(isMatch);
     });
   }
 };
@@ -91,5 +99,4 @@ UserSchema.statics = {
       .exec(cb);
   }
 };
-
 module.exports = UserSchema;
