@@ -45,9 +45,7 @@ exports.adminRequire = function(req, res, next) {
 // signup 提交用户注册数据
 exports.signup = function(req, res) {
 	var _user = req.body.user;
-	// 其他获取参数的方法
-	// req.query('user')
-	// req.params('user')
+
   if(_user.name && _user.email && _user.password)
   {
 		User.findOne({name: _user.name}, function(err, user) {
@@ -63,7 +61,6 @@ exports.signup = function(req, res) {
 			else {
 				var new_user = new User(_user);
 				
-				// console.log(user);
 				// 密码未加密
 				new_user.save(function(err, user) {
 					if (err) {
@@ -100,7 +97,6 @@ exports.signin = function(req, res) {
 				console.log(err);
 			}
 			if(isMatch) {
-				// console.log('登录成功．');
 				req.session.user = user;
 				return res.redirect('/');
 			}
@@ -114,10 +110,10 @@ exports.signin = function(req, res) {
 // 登出页面
 exports.logout = function(req, res) {
 	delete req.session.user;
-	//delete app.locals.user;
 
 	return res.redirect('/');
 };
+// user home
 exports.userHome = function(req, res) {
 	var id = req.params.id;
 
@@ -131,3 +127,28 @@ exports.userHome = function(req, res) {
 		});
 	});
 };
+
+//delete user
+exports.del = function(req, res) {
+	var id = req.query.id;
+
+	if(id)
+	{
+		User.remove({_id: id}, function(err, user) {
+			userId = user._id;
+			
+			// delete article relate user
+			Article.remove({author: userId}, function(err, article) {
+				if(err) 
+				{
+					console.log(err);
+					res.json({success: 0});
+				}
+				else
+				{
+					res.json({success: 1,user: user});
+				}
+			});
+		});	
+	}
+}

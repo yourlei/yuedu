@@ -3,7 +3,7 @@ var Article = require('../models/article');
 
 // save comment
 exports.save = function (req, res) {
-	var _comment = req.body.comment;
+  var _comment = req.body.comment;
   var articleId = _comment.article;
 
   Article.update({_id: articleId}, {$inc: {commentCount: 1}}, function(err) {
@@ -19,8 +19,6 @@ exports.save = function (req, res) {
         to: _comment.tid,
         content: _comment.content
       };
-
-      console.log(comment);
       comment.reply.push(reply);
 
       comment.save(function(err, comment) {

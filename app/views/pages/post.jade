@@ -31,8 +31,6 @@ html(lang="zh-CN")
 									.user-meta
 										a(href="/userhome/#{user._id}" target="")
 											span.user-name #{user.name}
-										//br
-										//a(href="" target="").user-post
 											span 文章数 #{user.wirteCount}
 								.user-car-footer
 									a(href="/write" target="_self") 
@@ -53,7 +51,6 @@ html(lang="zh-CN")
 					a(href="/userhome/#{author._id}" target='_blank').avatar
 						img(src="#{author.avatar}")
 				section.col-md-8.col-xs-8.about
-					//h3.author 小悦
 					h3.author #{author.name}
 					p 天马行空无逻辑，温柔而孤独，懒散又认真.
 				section.col-md-2.col-xs-2.follow
@@ -62,8 +59,6 @@ html(lang="zh-CN")
 						span 关注
 			h1.title #{article.title}
 			.meta-article
-				//a(href="").author-name
-					span 小悦
 				span.meta-item.readed
 					span.glyphicon.glyphicon-eye-open.meta-icon
 					span 阅读
@@ -78,7 +73,7 @@ html(lang="zh-CN")
 					span.all-num #{comments.length}
 				span.meta-item
 					span.glyphicon.glyphicon-time.meta-icon
-					span #{moment(article.meta.createdAt).format('YYYY-MMM-DD, h:mm:ss a')}
+					span #{moment(article.meta.updateAt).format('YYYY-MM-DD HH:mm:ss')}
 			.show-content
 				.img
 					img(src="/images/post-cover.jpg")
@@ -106,7 +101,7 @@ html(lang="zh-CN")
 								p #{item.content}
 							.comment-footer.text-right
 								span
-									span.comment-time #{moment(item.meta.createAt).format('YYYY-MMM-DD HH:mm:ss')}
+									span.comment-time #{moment(item.meta.createAt).format('YYYY-MM-DD HH:mm:ss')}
 								a(href="")
 									span.glyphicon.glyphicon-heart.icon-font
 									span.good 赞
@@ -125,11 +120,11 @@ html(lang="zh-CN")
 											p #{reply.content}
 										.comment-footer.text-right
 											span
-												span.comment-time 2015-12-31 23:42
+												span.comment-time #{moment(reply.currentTime).format('YYYY-MM-DD HH:mm:ss')}
 											a(href="")
 												span.glyphicon.glyphicon-heart.icon-font
 												span.good 赞
-											//a.reply-comment(href="#comments", data-cid="#{item._id}", data-tid="#{item.from._id}")
+											a.reply-comment(href="#comments", data-cid="#{item._id}", data-tid="#{reply.from._id}")
 												span.respond 回复
 									hr
 				#comments

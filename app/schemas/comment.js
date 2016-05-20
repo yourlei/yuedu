@@ -9,7 +9,11 @@ var CommentSchema = new Schema({
  	reply: [{
  		to: {type: ObjectId, ref: 'User'},
  		from: {type: ObjectId, ref: 'User'},
- 		content: String
+ 		content: String,
+ 		currentTime:{
+ 			type: Date,
+ 			default: Date.now()
+ 		} 
  	}],
 	meta: {
 		createAt: {
@@ -46,8 +50,7 @@ CommentSchema.statics = {
 	},
 	//search record
 	findById: function(id, cb){
-		//console.log("find"+id);
-		return this.findOne('{_id: id}')
+		return this.findOne({_id: id})
 				   .exec(cb);
 	}
 };

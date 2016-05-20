@@ -5,7 +5,7 @@
 							path(d="M6 36h36v-4H6v4zm0-10h36v-4H6v4zm0-14v4h36v-4H6z")
 		.yue-navbar
 			span.yue-logo-title 悦读
-			form(method='GET' action='/results' target='_blank').yue-form-search
+			form(method='GET' action='/results' target='_blank' onsubmit='return check();').yue-form-search
 				span.glyphicon.glyphicon-search.search-icon
 				input(type="search", placeholder='搜索', name='q')
 	.col-xs-2.col-sm-2.col-md-2.md-layout.no-padding

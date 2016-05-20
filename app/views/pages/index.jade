@@ -11,14 +11,12 @@ block content
 							.yue-content-post
 								.user-info
 									a(href="/userhome/#{item.author._id}" target="_blank")
-										//span.glyphicon.glyphicon-user.user-logo
 										img(src='#{item.author.avatar}').user-logo
 										span.user-name #{item.author.name}
-									span.post-time #{moment(item.meta.createdAt).startOf('hour').fromNow()}
+									span.post-time #{moment(item.meta.updateAt).startOf('hour').fromNow()}
 								.article-title
 									a(href="/post/#{item._id}" target="_blank") #{item.title}
 								a.img-box(href="")
-									//img.img(src="#{item.cover}")
 									img.img(src="/images/post-img-1.jpg")
 								.post-footer
 									a(href="") 
@@ -36,3 +34,4 @@ block content
 					span.glyphicon.glyphicon-pencil.icon-pen
 	script(src='/libs/requirejs/require.min.js' defer async="true")
 	script(src='/libs/requirejs/require.min.js' data-main='/js/main')
+	script(src='/js/category.js')

@@ -52,18 +52,7 @@ UserSchema.pre('save', function(next) {
 		{
 			return next(err);
 		}
-		/*
-			bcrypt.hash(passwd, salt, function(err, hash){
-				if(err)
-				{
-					return next(err);
-				}
-
-				_user.password = hash;
-				// console.log(_user.password);
-				next();
-			});
-		*/
+		
 		bcrypt.hash(_user.password, null, null, function (err, hash){
 				if (err) {
 					return next(err);
@@ -78,10 +67,12 @@ UserSchema.methods = {
   // _password用户登录时输入的密码
   comparePassword: function(_password, cb) {
     bcrypt.compare(_password, this.password, function(err, isMatch) {
-      if (err) return cb(err);
+      if (err)
+    	{
+    		return cb(err);
+    	}
 
       cb(null, isMatch);
-     // console.log(isMatch);
     });
   }
 };

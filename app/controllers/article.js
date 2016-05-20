@@ -13,7 +13,6 @@ exports.editArticle = function (req, res) {
 exports.postArticle = function(req, res) {
 	var _article = req.body.article;
 
-	// console.log(_article);
   User.update({_id: _article.author}, {$inc: {writeCount: 1}}, function(err) {
    if (err) {
      console.log(err);
@@ -26,7 +25,6 @@ exports.postArticle = function(req, res) {
 		if (err) {
 			console.log(err);
 		}
-		// console.log(user);
 		res.redirect('/');
 	});
 };
@@ -39,14 +37,6 @@ exports.detail = function (req, res) {
 	   }
 	 });
 
-	// if (req.session.user) {
-	// 	var userId = req.session.user._id,
-	// 		  writeCount;		
-	// 	Article.find({author: userId}, function(err, result) {
-	// 		writeCount = result.length;
-	// 	})
-	// }
-
 	Article.findById(id, function(err, article) {
 		if (err) {
 			console.log(err);
@@ -54,7 +44,6 @@ exports.detail = function (req, res) {
 		var articleId = article.author;
 
 		User.findById(articleId, function(err, user) {
-			// console.log('usr: ' + user);
 			Comment
 						.find({article: id})
 						.populate('from', 'name avatar')

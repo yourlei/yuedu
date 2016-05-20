@@ -32,9 +32,11 @@ define(["jquery", "slideLeft"], function($, slideLeft) {
 	}, function() {
 		$('.user-car').hide();
 	});
-	// $('.user-car').hover(function() {
-	// 	$(this).show();
-	// }, function() {
-	// 	$(this).hide();
-	// });
 });
+function check() {
+	if($('input').val().trim() != '')
+	{
+		return true;
+	}
+	return false;
+}

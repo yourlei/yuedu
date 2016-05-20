@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-//var moment = require('moment');
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 
@@ -13,19 +12,13 @@ var ArticleSchema = new Schema({
 		default: 0
 	},
 	title: String,
-	// author: {
-	// 	type: ObjectId,
-	// 	ref: 'User'
-	// },
-	// cover: String,
 	content: String,
 	html: String,
 	pv: {
 		type: Number,
 		default: 0
 	},
-	//readed: Number,
-	//star: Number,
+	tag: String,
 	meta: {
 		createAt: {
 			type: Date,

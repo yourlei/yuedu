@@ -21,23 +21,14 @@ define(["jquery"], function($) {
 		 		  transform = target.css('transform'),　//取得属性值
 		 		  result = regRule.exec(transform)[0].split(',')[4];
 		 
-		 // console.log(/\s*(\w+)/.exec(result[0]));
-		 // console.log(transform);
-		 
 		 // 检测leftNavbar的状态
 		 if( Number.parseInt(result) < 0) {
-		 	 // target.css({display: 'block'}).animate({left: "0px"});
 		 	 target.css({transform: "translateX(0)"});
 		 	 mainContent.css({transform: "translateX(100px)"});
-		 	 // target.addClass('is-visible ')
-		 	 // alert('hide')
 		 }
 		 else {
-		 	 // target.css({display: 'none'}).animate({left: '-250px'});
 		 	 target.css({transform: "translateX(-240px)"});
 		 	 mainContent.css({transform: "translateX(0)"});
-		 	 // target.addClass('not-visible ')
-		 	 // alert('show');
 		 }
 	};
 	// 封装成插件返回
