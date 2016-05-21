@@ -19,7 +19,7 @@ exports.index = function (req, res) {
 						});
 					});
 };
-
+// life tag
 exports.life = function (req, res) {
 	if (req.session.user) {
 		var userId = req.session.user._id,
@@ -38,6 +38,27 @@ exports.life = function (req, res) {
 					});
 				});
 };
+
+// hot tag
+exports.weekly = function (req, res) {
+	if (req.session.user) {
+		var userId = req.session.user._id,
+			  writeCount;		
+		Article.find({author: userId}, function(err, result) {
+			writeCount = result.length;
+		})
+	}
+	Article.find({'pv': {$gt: 100}})
+       .sort({_id: -1})
+			 .populate('author', 'name avatar')
+			 .exec(function(err, articles) {
+					res.render('index', {
+						articles: articles,
+						writeCount: writeCount
+					});
+				});
+};
+
 // story tag
 exports.story = function (req, res) {
 	if (req.session.user) {

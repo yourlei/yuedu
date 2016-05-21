@@ -33,10 +33,3 @@ define(["jquery", "slideLeft"], function($, slideLeft) {
 		$('.user-car').hide();
 	});
 });
-function check() {
-	if($('input').val().trim() != '')
-	{
-		return true;
-	}
-	return false;
-}

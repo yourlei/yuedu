@@ -21,6 +21,7 @@ module.exports = function(app) {
 	// 首页
 	app.get('/', Index.index);
 	app.get('/life', Index.life);
+	app.get('/hots', Index.weekly);
 	app.get('/story', Index.story);
 	app.get('/it', Index.it);
 
