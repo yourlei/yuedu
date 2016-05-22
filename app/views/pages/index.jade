@@ -16,7 +16,7 @@ block content
 									span.post-time #{moment(item.meta.updateAt).startOf('hour').fromNow()}
 								.article-title
 									a(href="/post/#{item._id}" target="_blank") #{item.title}
-								a.img-box(href="")
+								a.img-box(href="/post/#{item._id}")
 									img.img(src="/images/post-img-1.jpg")
 								.post-footer
 									a(href="") 

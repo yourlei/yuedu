@@ -111,11 +111,12 @@ a {
  		height: auto;
  		margin: auto;
  	}
- 	// @media (max-width: 768px) {
- 	// 	img {
- 	// 		width: 100%;
- 	// 	}
- 	// }
+}
+article img {
+	max-width: 100%;
+	height: auto;
+	margin: auto;
+	text-align: center;
 }
 .meta-article {
 	font-size: 12px;
@@ -143,6 +144,7 @@ a {
 /* main content */
 .show-content {
 	line-height: 2;
+	margin-top: 30px;
 	overflow: hidden;
 
 	ul, ol, span, p {

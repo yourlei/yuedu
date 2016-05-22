@@ -135,6 +135,12 @@ a {
     height: auto;
     margin: auto; }
 
+article img {
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  text-align: center; }
+
 .meta-article {
   font-size: 12px;
   margin-bottom: 10px; }
@@ -155,6 +161,7 @@ a {
 /* main content */
 .show-content {
   line-height: 2;
+  margin-top: 30px;
   overflow: hidden; }
   .show-content ul, .show-content ol, .show-content span, .show-content p {
     -webkit-text-align: justify;
