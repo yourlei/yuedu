@@ -5,7 +5,7 @@
 */
 require.config({
 	paths: {
-		"jquery":     "../libs/jquery/dist/jquery.min"
+  	"jquery": "../libs/jquery/dist/jquery.min"
 	}
 });
 // define main
@@ -33,6 +33,36 @@ define(["jquery"], function($) {
 	}
 	scroll();
 
+  //  back top
+  function BackTop() {
+    var win = $(window),
+        beforeScrollTop = win.scrollTop();
+
+    win.on("scroll", function() {
+      var afterScrollTop = win.scrollTop(),
+          delta = afterScrollTop - beforeScrollTop;
+ 
+      if(delta > 100)
+      {
+        $('.chevron-up').css({'right': '0px'});
+      }
+      else
+      {
+        $('.chevron-up').css({'right': '-70px'});
+      }
+    });
+  }
+  BackTop();
+  // backup click event
+  $('.chevron-up').click(function(e) {
+
+   e.preventDefault();
+
+   if($(window).scrollTop() > 0)
+   {
+     $(window).scrollTop(0);   
+   }
+  });
   // comment button evetn
   var flag = 1;
   $(".add-comment, .reply-comment").on('click', function(e) {

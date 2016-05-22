@@ -138,6 +138,7 @@ a {
 article img {
   max-width: 100%;
   height: auto;
+  display: block;
   margin: auto;
   text-align: center; }
 
@@ -277,5 +278,27 @@ article img {
     color: cornflowerblue; }
     .reply-container .commenter-name:hover {
       color: #333; }
+
+.fix-btn {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 45px; }
+  .fix-btn a {
+    display: inline-block;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    background-color: #49BE38; }
+    .fix-btn a:nth-child(1) {
+      position: absolute;
+      bottom: 45px;
+      right: -70px;
+      border-bottom: 1px solid #FFF; }
+  .fix-btn a:hover {
+    background-color: #6C6; }
 
 /*# sourceMappingURL=post.css.map */
