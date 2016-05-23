@@ -12,6 +12,20 @@ exports.editArticle = function (req, res) {
 // public article
 exports.postArticle = function(req, res) {
 	var _article = req.body.article;
+	var str = _article.html;
+	// 匹配图片
+	var imgReg = /<img.*?(?:>|\/>)/i;
+	//匹配src属性 
+	var srcReg = /src=[\'\"]?([^\'\"]*)[\'\"]?/i;
+
+	var imgObj = str.match(imgReg);
+	var defaultSrc = "/images/cover.png",
+	    src;
+
+	if(imgObj)
+	{
+		src = imgObj[0].match(srcReg);		
+	}
 
   User.update({_id: _article.author}, {$inc: {writeCount: 1}}, function(err) {
    if (err) {
@@ -21,6 +35,15 @@ exports.postArticle = function(req, res) {
 
 	var new_article = new Article(_article);
 
+	if (src)
+	{
+		new_article.imgList.push(src[1]);	
+	}
+	else
+	{
+		new_article.imgList.push(defaultSrc);	
+	}
+
 	new_article.save(function(err, article) {
 		if (err) {
 			console.log(err);
@@ -28,6 +51,7 @@ exports.postArticle = function(req, res) {
 		res.redirect('/');
 	});
 };
+
 exports.detail = function (req, res) {
 	var id = req.params.id;
 

@@ -14,6 +14,7 @@ exports.index = function (req, res) {
 				 .populate('author', 'name avatar')
 				 .exec(function(err, articles) {
 						res.render('index', {
+							title: '悦读',
 							articles: articles,
 							writeCount: writeCount
 						});
@@ -33,6 +34,7 @@ exports.life = function (req, res) {
 			 .populate('author', 'name avatar')
 			 .exec(function(err, articles) {
 					res.render('index', {
+						title: '悦读',
 						articles: articles,
 						writeCount: writeCount
 					});
@@ -53,6 +55,7 @@ exports.weekly = function (req, res) {
 			 .populate('author', 'name avatar')
 			 .exec(function(err, articles) {
 					res.render('index', {
+						title: '悦读',
 						articles: articles,
 						writeCount: writeCount
 					});
@@ -73,6 +76,7 @@ exports.story = function (req, res) {
 			 .populate('author', 'name avatar')
 			 .exec(function(err, articles) {
 					res.render('index', {
+						title: '悦读',
 						articles: articles,
 						writeCount: writeCount
 					});
@@ -92,6 +96,7 @@ exports.it = function (req, res) {
 			 .populate('author', 'name avatar')
 			 .exec(function(err, articles) {
 					res.render('index', {
+						title: '悦读',
 						articles: articles,
 						writeCount: writeCount
 					});

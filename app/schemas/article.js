@@ -7,17 +7,18 @@ var ArticleSchema = new Schema({
 		type: ObjectId, 
 		ref: 'User'
 	},
+	title: String,
+	content: String,
 	commentCount:  {
 		type: Number, 
 		default: 0
 	},
-	title: String,
-	content: String,
 	html: String,
 	pv: {
 		type: Number,
 		default: 0
 	},
+	imgList: {type: Array, default: []},
 	tag: String,
 	meta: {
 		createAt: {
