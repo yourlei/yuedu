@@ -15,8 +15,8 @@ block content
 				.result-item
 					h2
 						a(href='/post/#{item._id}') #{item.title}
-					section
-						p !{item.html}
+					p
+						img(src='#{item.imgList}')
 					.article-info
 						a(href="/post/#{item._id}")
 							span 作者-

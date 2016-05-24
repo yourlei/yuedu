@@ -30,8 +30,8 @@ html(lang="zh-CN")
 										img(src="#{user.avatar}")
 									.user-meta
 										a(href="/userhome/#{user._id}" target="")
-											span.user-name #{user.name}
-											span 文章数 #{user.wirteCount}
+											span.user-name #{user.name}<br/>
+											span 文章数 #{user.writeCount}
 								.user-car-footer
 									a(href="/write" target="_self") 
 										i.glyphicon.glyphicon-pencil
