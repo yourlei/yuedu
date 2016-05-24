@@ -460,7 +460,7 @@ a:hover {
   .yue-content-post .img-box {
     position: relative;
     display: block;
-    height: auto;
+    height: 350px;
     width: auto;
     overflow: hidden;
     margin-right: -15px;
