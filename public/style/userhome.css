@@ -76,13 +76,13 @@ a {
     padding: 10px 16px 0;
     word-wrap: break-word; }
   .main .img a:hover .hoverlayer {
-    top: 14px; }
+    top: 0px; }
 
 .hoverwrap {
   position: relative;
   diplay: block;
   width: 248px;
-  height: 220px;
+  height: 238px;
   overflow: hidden; }
   .hoverwrap span img {
     width: auto;
@@ -94,14 +94,14 @@ a {
     top: -220px;
     left: 0;
     width: 248px;
-    height: 220px;
+    height: 238px;
     text-align: center;
     color: #FFF;
     transition: top .5s ease 0s;
     z-index: 5; }
   .hoverwrap .hoverbg {
     width: 248px;
-    height: 220px;
+    height: 238px;
     background-color: #000;
     opacity: 0.3; }
   .hoverwrap .info {
