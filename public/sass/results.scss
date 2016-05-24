@@ -1,12 +1,22 @@
- .main {
- 	width: 970px;
- }
- .result-item {
- 	padding-top: 15px;
+.main {
+	width: 970px;
+}
+.result-item {
+	padding-top: 15px;
 
- 	.article-info {
- 		a {
- 			margin: 0 5px;
- 		}
- 	}
- }
+	.article-info {
+		a {
+			margin: 0 5px;
+		}
+	}
+	a {color: #000;}
+	.post-cover {
+		max-width: 550px;
+		height: auto;
+		overflow: hidden;
+		img {
+				width: 100%;
+				overflow: hidden;
+		}
+	}
+}

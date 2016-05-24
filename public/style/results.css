@@ -5,5 +5,14 @@
   padding-top: 15px; }
   .result-item .article-info a {
     margin: 0 5px; }
+  .result-item a {
+    color: #000; }
+  .result-item .post-cover {
+    max-width: 550px;
+    height: auto;
+    overflow: hidden; }
+    .result-item .post-cover img {
+      width: 100%;
+      overflow: hidden; }
 
 /*# sourceMappingURL=results.css.map */
